@@ -17,4 +17,6 @@
 	1. 更改manage.py中的配置
 		![300](assets/django+vue3前后端分离初始化项目/file-20260523152948196.png)
 	2. 创建一个数据库
-	3. 在model中创建实体
+	3. 在model中创建实体如下：
+		![300](assets/django+vue3前后端分离初始化项目/file-20260523153148050.png)
+	4. 
