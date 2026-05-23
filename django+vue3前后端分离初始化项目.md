@@ -24,4 +24,19 @@
 			![300](assets/django+vue3前后端分离初始化项目/file-20260523153302093.png)
 		+ 执行迁移文件：
 			![300](assets/django+vue3前后端分离初始化项目/file-20260523153501467.png)
-		
+		+ 在MySQL中写下以下代码来创建测试用户：
+			```sql
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('3', '1', '123456','20240906202303.jpg','confeng2014@126.com','1862857104','2024-08-08','0','2024-08-08','2024-08-14','测试用户');  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('6', '4', '123456','20240906202303.jpg',null,null,null,'1',null,null,null);  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('7', '5', '123456','20240906202303.jpg',null,null,null,'1',null,null,null);  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('8', '6', '123456','20240906202303.jpg',null,null,null,'0',null,null,null);  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('11', '9', '123456','20240906202303.jpg',null,null,null,'1',null,null,null);  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('14', '666', '123456','default.jpg','confeng2014@126.com','1862857104',null,'1','2024-08-13',null,'33');  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('15', 'jack', '123456','default.jpg','confeng2014@126.com','1862857104',null,'1','2024-08-13','2024-09-06','禁止用户测试4');  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('16', '12323232', '123456','default.jpg','1@126.com','1862857104',null,'1','2024-08-18','2024-08-18','115');  
+			insert into `sys_user` (id, username, password, avatar, email, phonenumber, login_date, status, create_time, update_time, remark) VALUES ('17', 'marry', '123456','default.jpg','111@qq.com','15586521012',null,'1','2024-09-05',null,'555')
+			```
+8. 开发接口
+	1. Restful规范：
+		![300](assets/django+vue3前后端分离初始化项目/file-20260523161228364.png)
+	2. 
