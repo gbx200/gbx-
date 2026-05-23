@@ -11,6 +11,7 @@
 5. 在settings.py中添加以下内容
 	![400](assets/django+vue3前后端分离初始化项目/file-20260523152042082.png)
 6. 管理url
-+ 在父模块的urls中include一下子模块，include需要提前import一下![400](assets/django+vue3前后端分离初始化项目/file-20260523152437171.png)
-+ 上一步写入后先备注掉，不然之后运行项目会报错
-7. 
+	+ 在父模块的urls中include一下子模块，include需要提前import一下![400](assets/django+vue3前后端分离初始化项目/file-20260523152437171.png)
+	+ 上一步写入后先备注掉，不然之后运行项目会报错
+7. 链接数据库
+	1. 更改manage.py中的配置
