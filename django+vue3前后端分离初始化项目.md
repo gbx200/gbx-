@@ -9,5 +9,5 @@
 	![400](assets/django+vue3前后端分离初始化项目/file-20260523151801210.png)
 5. 在settings.py中添加以下内容![400](assets/django+vue3前后端分离初始化项目/file-20260523152042082.png)
 6. 管理url
-+ 在父模块的urls中include一下子模块
++ 在父模块的urls中include一下子模块，include需要提前import一下![400](assets/django+vue3前后端分离初始化项目/file-20260523152437171.png)
 + 在你的app中创建urls.py并写入以下代码
