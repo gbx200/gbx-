@@ -7,4 +7,4 @@
  ![400](assets/django+vue3前后端分离初始化项目/file-20260523151517561.png)
 4. 在底部输入以下内容来创建app，user可以更改为app名
 	![400](assets/django+vue3前后端分离初始化项目/file-20260523151801210.png)
-5. 
+5. 在settings.py中写入一下
