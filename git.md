@@ -17,4 +17,6 @@ git add         添加暂存区
 git rm --cached       删除暂存区的文件（工作区没被删除）
 ![](assets/git/file-20260710193706536.png)
 
-git commit -m "日志信息" 文件名
+git commit -m "日志信息" 文件名     提交本地库
+![](assets/git/file-20260710193858591.png)
+其中高亮显示的是七位的版本号
