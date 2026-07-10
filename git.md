@@ -26,3 +26,5 @@ git reflog    或者    git log        查看版本信息
 ![](assets/git/file-20260710194150561.png)
 
 修改文件并提交：
+![](assets/git/file-20260710194500848.png)
+
