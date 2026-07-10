@@ -59,4 +59,8 @@ gti merge 要合并的分支
 https://github.com/gbx200/gitdemo.git
 ![500](assets/git/file-20260710203206577.png)
 
-git remote add 别名          创建别名
+git remote add 别名 http          创建别名
+git remote -v                            查看别名
+![500](assets/git/file-20260710203604431.png)
+
+git 
