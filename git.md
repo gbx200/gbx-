@@ -22,4 +22,4 @@ git commit -m "日志信息" 文件名     提交本地库
 + 其中高亮显示的是七位的版本号
 ![](assets/git/file-20260710193955951.png)
 
-git reflog        
+git reflog    或者    g'i't        查看版本信息
