@@ -7,3 +7,5 @@ git config --global user.email []         设置用户签名
 ![](assets/git/file-20260710192857767.png)
 
 git status        查看状态
+![](assets/git/file-20260710193057023.png)
+
