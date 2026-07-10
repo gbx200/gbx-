@@ -67,4 +67,6 @@ git push 别名 分支名                推送
 ![500](assets/git/file-20260710204010694.png)
 ![500](assets/git/file-20260710204221415.png)
 
-git 
+git pull 别名 分支名                 拉取库到本地
+![500](assets/git/file-20260710204538641.png)
+
