@@ -51,5 +51,7 @@ gti merge 要合并的分支
 #### 团队内协作：
 ![500](assets/git/file-20260710202253504.png)
 #### 跨团队协作：
+![500](assets/git/file-20260710202630632.png)
 
 
+## GitHub操作
