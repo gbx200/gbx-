@@ -25,3 +25,4 @@ git commit -m "日志信息" 文件名     提交本地库
 git reflog    或者    git log        查看版本信息
 ![](assets/git/file-20260710194150561.png)
 
+修改文件并提交：
