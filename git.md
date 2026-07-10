@@ -55,3 +55,8 @@ gti merge 要合并的分支
 
 
 ## GitHub操作
+创建仓库
+https://github.com/gbx200/gitdemo.git
+![500](assets/git/file-20260710203206577.png)
+
+git remote add 别名          创建别名
