@@ -64,3 +64,5 @@ git remote -v                            查看别名
 ![500](assets/git/file-20260710203604431.png)
 
 git push 别名 分支名                推送
+![500](assets/git/file-20260710204010694.png)
+
