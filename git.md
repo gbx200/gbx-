@@ -29,3 +29,13 @@ git reflog    或者    git log        查看版本信息
 ![500](assets/git/file-20260710194500848.png)
 
 git reset --hard 版本号          穿梭版本
+
+
+## 分支
+gti bransh -v         查看分支
+git branch 分支名        创建分支
+![500](assets/git/file-20260710200335280.png)
+
+git chekout        切换分支
+![500](assets/git/file-20260710200449310.png)
+
