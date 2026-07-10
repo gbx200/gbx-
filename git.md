@@ -63,4 +63,4 @@ git remote add 别名 http          创建别名
 git remote -v                            查看别名
 ![500](assets/git/file-20260710203604431.png)
 
-git 
+git push 别名 fen'zhi'ming
