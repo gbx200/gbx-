@@ -38,4 +38,8 @@ git branch 分支名        创建分支
 
 git chekout        切换分支
 ![500](assets/git/file-20260710200449310.png)
+![500](assets/git/file-20260710200845928.png)
+
+gti merge 要合并的分支
+![500](assets/git/file-20260710201025855.png)
 
