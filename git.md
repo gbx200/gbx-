@@ -1,3 +1,5 @@
+## 基础
+
 git config --global user.name []         设置用户签名
 
 git config --global user.email []         设置用户签名
@@ -42,4 +44,8 @@ git chekout        切换分支
 
 gti merge 要合并的分支
 ![500](assets/git/file-20260710201025855.png)
+
+
+
+## 团队协作
 
