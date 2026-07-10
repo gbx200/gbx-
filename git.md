@@ -8,4 +8,6 @@ git config --global user.email []         设置用户签名
 
 git status        查看状态
 ![](assets/git/file-20260710193057023.png)
+![](assets/git/file-20260710193332287.png)
 
+git add         添加暂存区
