@@ -106,4 +106,5 @@ git clone https：//······           克隆仓库（不需要登录）
 
 #### 分享到github
 ![500](assets/git/file-20260711112229314.png)
+选择share
 
