@@ -79,4 +79,6 @@ git clone https：//······           克隆仓库（不需要登录）
 ## IDEA集成git
 #### 配置忽略文件
 	1.创建忽略规则文件git.ignore
-	
+
+#### 创建git仓库
+![500](assets/git/file-20260711104258211.png)
