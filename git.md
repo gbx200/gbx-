@@ -56,6 +56,7 @@ gti merge 要合并的分支
 #### 跨团队协作：
 ![500](assets/git/file-20260710202630632.png)
 ##### fork到自己仓库修改
+![500](assets/git/file-20260711102356712.png)
 
 ## GitHub操作
 创建仓库
