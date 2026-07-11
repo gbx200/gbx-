@@ -70,3 +70,5 @@ git push 别名 分支名                推送
 git pull 别名 分支名                 拉取库到本地
 ![500](assets/git/file-20260710204538641.png)
 
+git clone https：//······           克隆仓库（不需要登录）
+
