@@ -76,3 +76,7 @@ git pull 别名 分支名                 拉取库到本地
 
 git clone https：//······           克隆仓库（不需要登录）
 
+## IDEA集成git
+#### 配置忽略文件
+	1.创建忽略规则文件git.ignore
+	
