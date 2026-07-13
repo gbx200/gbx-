@@ -63,3 +63,40 @@ def get_radio_value():
 button = tk.Button(root, text="获取选择", command=get_radio_value)
 button.pack()
 ```
+### 复选框（Checkbutton）
+```python
+import tkinter as tk  
+  
+root = tk.Tk()  
+root.title("复选框控件的使用")  
+root.geometry("400x300+200+200")  
+  
+var1 = tk.IntVar()  
+var2 = tk.IntVar()  
+var3 = tk.IntVar()  
+var4 = tk.IntVar()  
+  
+check1 = tk.Checkbutton(root, text="篮球", variable=var1)  
+check1.pack()  
+check2 = tk.Checkbutton(root, text="足球", variable=var2)  
+check2.pack()  
+check3 = tk.Checkbutton(root, text="羽毛球", variable=var3)  
+check3.pack()  
+check4 = tk.Checkbutton(root, text="排球", variable=var4)  
+check4.pack()  
+  
+def get_hobby():  
+    hobby = ""  
+    if var1.get() == 1:  
+       hobby += "篮球 "    if var2.get() == 1:  
+       hobby += "足球 "    if var3.get() == 1:  
+       hobby += "羽毛球 "    if var4.get() == 1:  
+       hobby += "排球 "    label.config(text="您选择的兴趣爱好是：" + hobby)  
+  
+button = tk.Button(root, text="获取选中的选项", command=get_hobby)  
+button.pack()  
+label = tk.Label(root, text="您选择的兴趣爱好是：")  
+label.pack()  
+  
+root.mainloop()
+```
