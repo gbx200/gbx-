@@ -44,5 +44,9 @@ button1.pack()
 text = tk.Text(root, height=5, width=30)  
 text.pack()
 
-
+def get_text_value():  
+    value = text.get("1.0", tk.END)  
+    print(f'文本框的值是：{value}')  
+button2 = tk.Button(root, text="获取输入", command=get_text_value)  
+button2.pack()
 ```
