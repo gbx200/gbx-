@@ -24,4 +24,14 @@ def button_click():
 	label.config(text="按钮被点击了")
 	
 button = tk.Button(root, text="点击我", command=button_click)
+
+button.pack()
+```
+### 单行文本框（输入框）
+```python
+entry = tk.Entry(root, width=30)
+entry.pack
+
+# 获取输入的值
+def get_
 ```
