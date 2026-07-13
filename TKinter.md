@@ -185,3 +185,12 @@ root.mainloop()
 ```
 ![300](assets/TKinter/file-20260713195301420.png)
 # 事件处理
+### 事件绑定基础
+在tkinter中，事件绑定通过 `widget.bind(event, halder)`方法实现：
++ widget：需要响应的组件
++ event：事件类型，使用字符串表示（如 `<Button-l>`表示鼠标左键点击）
++ handler：事件处理函数，当事件发生时调用
+**例如：鼠标点击事件**
+```python
+
+```
