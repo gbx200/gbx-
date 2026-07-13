@@ -169,5 +169,19 @@ root.mainloop()
 ### palse布局
 精确控制
 ```python
-
+import tkinter as tk  
+  
+root = tk.Tk()  
+root.title("布局")  
+root.geometry("400x300+200+200")  
+  
+button1 = tk.Button(root, text="button1")  
+button1.place(x=50, y=50, width=100, height=30)  # x,y为左上角坐标  
+button2 = tk.Button(root, text="button2")  
+button2.place(relx=0.5, rely=0.5, anchor=tk.CENTER)   # 相对位置，居中对齐  
+  
+var = tk.IntVar()  
+root.mainloop()
 ```
+![300](assets/TKinter/file-20260713195301420.png)
+# 事件处理
