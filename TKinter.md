@@ -128,5 +128,18 @@ root.mainloop()
 ```
 ### grip布局
 ```python
-
+import tkinter as tk  
+  
+root = tk.Tk()  
+root.title("布局")  
+root.geometry("400x300+200+200")  
+  
+for i in range(3):  
+    for j in range(3):  
+        button = tk.Button(root,text=f"按钮{i}{j}")  
+        button.grid(row=i,column=j, padx=10, pady=10)  
+  
+var = tk.IntVar()  
+root.mainloop()
 ```
+![300](assets/TKinter/file-20260713194007579.png)
