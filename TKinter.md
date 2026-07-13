@@ -41,5 +41,8 @@ button1.pack()
 ```
 ### 多行文本框（Text）
 ```python
-text = tk.Text()
+text = tk.Text(root, height=5, width=30)  
+text.pack()
+
+
 ```
