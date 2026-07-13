@@ -50,3 +50,16 @@ def get_text_value():
 button2 = tk.Button(root, text="获取输入", command=get_text_value)  
 button2.pack()
 ```
+### 单选按钮（Radiobutton）
+```python
+var = tk.StringVar(value="A")  # 默认选择A
+radio1 = tk.Radiobutton(root, text="选项A", variable=var, value="A")
+radio2 = tk.Radiobutton(root, text="选项B", variable=var, value="B")
+radio1.pack()
+radio2.pack()
+# 获取选择的值
+def get_radio_value():
+    print(f"选择的值是: {var.get()}")
+button = tk.Button(root, text="获取选择", command=get_radio_value)
+button.pack()
+```
