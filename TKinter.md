@@ -274,3 +274,60 @@ label.pack()
 
 root.mainloop()
 ```
+
+### 4、事件绑定的两种方式
+
+#### (1) 使用 `bind()` 方法
+
+```python
+button = tk.Button(root, text="按钮")
+button.bind("<Button-1>", lambda e: print("按钮被点击"))
+```
+
+#### (2) 使用 `command` 参数（仅适用于部分控件）
+
+```python
+button = tk.Button(root, text="按钮", command=lambda: print("按钮被点击"))
+```
+
+#### 区别：
+
+- `bind()` 更灵活，可以绑定多种事件类型。
+- `command` 仅适用于支持 `command` 参数的控件（如按钮）。
+
+### 5、事件绑定综合示例
+
+```python
+import tkinter as tk
+
+def handle_event(event):
+    event_type = event.type
+    widget = event.widget
+    x, y = event.x, event.y
+    print(f"事件类型: {event_type}, 控件: {widget}, 位置: ({x}, {y})")
+
+root = tk.Tk()
+root.geometry("300x200")
+
+# 1. 鼠标事件
+button = tk.Button(root, text="点击我")
+button.bind("<Button-1>", lambda e: print("左键点击"))
+button.bind("<Button-3>", lambda e: print("右键点击"))
+button.pack(pady=10)
+
+# 2. 键盘事件（绑定到整个窗口）
+root.bind("<Key>", lambda e: print(f"按下键: {e.char}"))
+root.bind("<Control-q>", lambda e: root.quit())  # Ctrl+Q 退出程序
+
+
+# 3. 窗口事件
+root.bind("<Configure>", lambda e: print(f"窗口大小: {e.width}x{e.height}"))
+
+# 4. 鼠标进入/离开事件
+label = tk.Label(root, text="悬停此处")
+label.bind("<Enter>", lambda e: label.config(bg="yellow"))
+label.bind("<Leave>", lambda e: label.config(bg="SystemButtonFace"))
+label.pack(pady=10)
+
+root.mainloop()
+```
