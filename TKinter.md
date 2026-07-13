@@ -192,5 +192,23 @@ root.mainloop()
 + handler：事件处理函数，当事件发生时调用
 **例如：鼠标点击事件**
 ```python
-
+import tkinter as tk  
+  
+root = tk.Tk()  
+root.title("事件处理")  
+root.geometry("400x300+200+200")  
+  
+def on_click(event):  
+    label.config(text=f"点击位置：x = {event.x},y = {event.y}")  
+  
+button = tk.Button(root, text="点击我")  
+button.bind("<Button-1>", on_click)  # 绑定左键点击事件  
+button.bind("<Button-3>", on_click)  # 绑定右键点击事件  
+button.pack()  
+label = tk.Label(root, text="")  
+label.pack()  
+  
+root.mainloop()
 ```
+
+### 常见事件类型
