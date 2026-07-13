@@ -143,3 +143,31 @@ var = tk.IntVar()
 root.mainloop()
 ```
 ![300](assets/TKinter/file-20260713194007579.png)
+```python
+import tkinter as tk  
+  
+root = tk.Tk()  
+root.title("布局")  
+root.geometry("400x300+200+200")  
+  
+# for i in range(3):  
+#     for j in range(3):  
+#         button = tk.Button(root,text=f"按钮{i}{j}")  
+#         button.grid(row=i,column=j, padx=10, pady=10)  
+  
+button1 = tk.Button(root, text="button1")  
+button1.grid(row=0,column=0,padx=10,pady=10)  
+button2 = tk.Button(root, text="button2")  
+button2.grid(row=0,column=1,padx=10,pady=10)  
+button3 = tk.Button(root, text="button3")  
+button3.grid(row=0,column=2,padx=10,pady=10)  
+  
+var = tk.IntVar()  
+root.mainloop()
+```
+![300](assets/TKinter/file-20260713194520915.png)
+### palse布局
+精确控制
+```python
+
+```
