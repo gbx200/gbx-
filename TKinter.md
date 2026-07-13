@@ -244,3 +244,33 @@ root.mainloop()
 |`<FocusIn>`|控件获得焦点|
 |`<FocusOut>`|控件失去焦点|
 |`<Destroy>`|控件被销毁|
+这是图片中的文字内容以及对应的代码块：
+
+### 3、事件对象
+
+当事件触发时，Tkinter 会将一个事件对象传递给处理函数，包含事件的详细信息：
+
+- `event.x`, `event.y`：鼠标坐标（相对于控件）。
+- `event.widget`：触发事件的控件。
+- `event.keycode`：键盘按键的代码。
+- `event.char`：键盘输入的字符（仅键盘事件）。
+
+#### 键盘事件示例
+
+```python
+# 获取键盘输入，显示按键信息及键码
+import tkinter as tk
+
+root = tk.Tk()
+root.title("事件处理")
+root.geometry("400x300+200+200")
+
+def on_key_press(event):
+    label.config(text=f"按下键: {event.char} \n (键码: {event.keycode})")
+
+root.bind("<Key>", on_key_press)  # 绑定全局键盘事件
+label = tk.Label(root, text="")
+label.pack()
+
+root.mainloop()
+```
