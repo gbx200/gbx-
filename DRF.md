@@ -16,3 +16,5 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 ![500](assets/DRF/file-20260713104707042.png)
 同样可以在全局注册
 ![500](assets/DRF/file-20260713105001114.png)
+![500](assets/DRF/file-20260713105343240.png)
+这里可以写上message以返回无权访问的信息
