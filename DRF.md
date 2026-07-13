@@ -10,3 +10,8 @@ drf：
 全局配置
 settings.py:![500](assets/DRF/file-20260712195020698.png)
 ![500](assets/DRF/file-20260712195240156.png)认证组件不能写在view视图中
+
+权限组件：
+![500](assets/DRF/file-20260713104625641.png)
+![500](assets/DRF/file-20260713104707042.png)
+同样可以在全局注册
