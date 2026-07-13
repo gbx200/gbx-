@@ -1,3 +1,4 @@
+# 基本组件
 ### 主窗口：
 ```python
 import tkinter as tk
@@ -99,4 +100,12 @@ label = tk.Label(root, text="您选择的兴趣爱好是：")
 label.pack()  
   
 root.mainloop()
+```
+
+
+# 布局管理
+### pack 布局
+
+```python
+
 ```
