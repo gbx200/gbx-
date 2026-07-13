@@ -107,5 +107,26 @@ root.mainloop()
 ### pack 布局
 
 ```python
+import tkinter as tk  
+from tkinter import mainloop  
+  
+root = tk.Tk()  
+root.title("布局")  
+root.geometry("400x300+200+200")  
+  
+button1 = tk.Button(root, text="button1")  
+button1.pack(side="left", padx=10)  # 左对齐，左右编剧10像素  
+  
+button2 = tk.Button(root, text="button2")  
+button2.pack(side="right", padx=10)  # 右...  
+  
+button3 = tk.Button(root, text="button3")  
+button3.pack(pady=10)  # 剧中，上下10px  
+  
+var = tk.IntVar()  
+root.mainloop()
+```
+### grip布局
+```python
 
 ```
