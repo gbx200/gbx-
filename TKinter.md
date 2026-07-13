@@ -33,5 +33,9 @@ entry = tk.Entry(root, width=30)
 entry.pack
 
 # 获取输入的值
-def get_
+def button_click2():  
+    value = entry.get()  
+    time_label.config(text=value)  
+button1 = tk.Button(root, text="获取输入", command=button_click2)  
+button1.pack()
 ```
