@@ -40,5 +40,6 @@ button1 = tk.Button(root, text="获取输入", command=button_click2)
 button1.pack()
 ```
 ### 多行文本框（Text）
-```
+```python
+text = tk.Text()
 ```
