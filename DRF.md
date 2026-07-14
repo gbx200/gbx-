@@ -35,3 +35,6 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 
 不想拿时分秒，只想要年月日：
 ![500](assets/DRF/file-20260714154707377.png)
+
+数据校验
+![500](assets/DRF/file-20260714160828815.png)
