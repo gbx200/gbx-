@@ -38,3 +38,7 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 
 数据校验
 ![500](assets/DRF/file-20260714160828815.png)
+
+内置校验规则
+![500](assets/DRF/file-20260714161055336.png)
+
