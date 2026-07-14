@@ -19,4 +19,10 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 ![500](assets/DRF/file-20260713105343240.png)
 这里可以写上message以返回无权访问的信息
 
-版本
+序列化一个对象
+![500](assets/DRF/file-20260714153233863.png)
+多个对象
+![500](assets/DRF/file-20260714153311564.png)
+
+一键序列化全部对象
+![500](assets/DRF/file-20260714153445119.png)
