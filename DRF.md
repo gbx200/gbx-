@@ -47,3 +47,4 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 
 两种serializer存储数据库：
 ![500](assets/DRF/file-20260714162321143.png)
+![500](assets/DRF/file-20260714162605525.png)
