@@ -45,3 +45,5 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 钩子校验
 ![500](assets/DRF/file-20260714161524256.png)
 
+两种serializer存储数据库：
+![500](assets/DRF/file-20260714162321143.png)
