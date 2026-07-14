@@ -26,3 +26,6 @@ settings.py:![500](assets/DRF/file-20260712195020698.png)
 
 一键序列化全部对象
 ![500](assets/DRF/file-20260714153445119.png)
+
+不想让性别返回数字：
+![800](assets/DRF/file-20260714154202547.png)
