@@ -31,7 +31,7 @@ button.pack()
 ### 单行文本框（输入框）（Entry）
 ```python
 entry = tk.Entry(root, width=30)
-entry.pack
+entry.pack()
 
 # 获取输入的值
 def button_click2():  
