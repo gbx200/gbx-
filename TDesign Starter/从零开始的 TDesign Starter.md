@@ -115,3 +115,4 @@ export function mapModuleRouterList(modules: Record<string, unknown>): Array<Rou
   return routerList;
 }
 ```
+前面用`import.meta.glob`收集到的是一个对象，这里代码是用来转化为Vue Router
