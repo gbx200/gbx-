@@ -45,3 +45,17 @@ app.mount('#app');
 这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
 
 ##### index.ts
+```ts
+import isObject from 'lodash/isObject';
+import uniq from 'lodash/uniq';
+import type { RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+```
++ isObject 用来判断传入的值是否是对象
++ uniq 用于创建一个去重后的数组副本
++ RouteRecordRaw 后面代码中定义 defaultRouterList 等变量时，用它来确保传入的路由配置格式是合法的
++ createRouter：用来创建一个全新的路由实例。
++ createWebHistory：用来创建基于 HTML5 History 模式的路由历史记录管理器（URL中没有#号）
+```ts
+const env = import.meta.env.MODE || 'development';
+```
