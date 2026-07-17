@@ -9,7 +9,7 @@
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260717185457141.jpg)
 
 ## src下的各个文件
-#### main.ts
+### main.ts
 ```ts
 /* eslint-disable simple-import-sort/imports */
 
@@ -37,6 +37,10 @@ app.use(i18n);
 app.mount('#app');
 ```
 
-#### router/
+### router/
+
 在这个文件夹下的，是我们的路由配置
 ![200](assets/从零开始的%20TDesign%20Starter/file-20260717191738796.png)
+
+这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
+
