@@ -76,3 +76,42 @@ const fixedModules = import.meta.glob(['./modules/**/*.ts', '!./modules/**/homep
 	'./modules/system/homepage.ts': { default: [/* 路由配置 */]
 }
 ```
+
+```ts
+// 其他固定路由
+const defaultRouterList: Array<RouteRecordRaw> = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/pages/login/index.vue'),
+  },
+  {
+    path: '/',
+    redirect: '/dashboard/base',
+  },
+];
+```
+这里定义了一个名为`defaultRouterList`的数组，用来存放默认的路由规则
++ `: Array<RouteRecordRaw>` 这是 TypeScript 的类型注解。RouteRecordRaw 是 Vue Router 提供的标准类型，它强制要求数组里的每一个对象都必须符合路由配置的标准格式（比如必须有 path，必须有 component 或 redirect 等）。这能在你写代码时就提前发现拼写错误
++ 下方正常定义路由
+
+```ts
+// 存放固定路由
+export const homepageRouterList: Array<RouteRecordRaw> = mapModuleRouterList(homepageModules);
+export const fixedRouterList: Array<RouteRecordRaw> = mapModuleRouterList(fixedModules);
+  
+export const allRoutes = [...homepageRouterList, ...fixedRouterList, ...defaultRouterList];
+// 固定路由模块转换为路由
+export function mapModuleRouterList(modules: Record<string, unknown>): Array<RouteRecordRaw> {
+  const routerList: Array<RouteRecordRaw> = [];
+  Object.keys(modules).forEach((key) => {
+    const routeModule = modules[key];
+    if (isObject(routeModule) && 'default' in routeModule) {
+      const route = routeModule.default;
+      const routes = Array.isArray(route) ? [...route] : [route];
+      routerList.push(...routes);
+    }
+  });
+  return routerList;
+}
+```
