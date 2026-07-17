@@ -59,5 +59,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 ```ts
 const env = import.meta.env.MODE || 'development';
 ```
-+ `import.meta.env.MODE`：这是 Vite 构建工具提供的内置环境变量，表示当前的运行模式（例如执行 npm run dev 时通常是 'development'，执行 npm run build 时通常是 'production'）。
-+ `|| 'development'`：这是一个“逻辑或”运算符（短路求值）。如果 import.meta.env.MODE 获取不到值（为 undefined 或空），就会使用默认值 'development'，起到兜底保护的作用。
++ `import.meta.env.MODE`：当前的运行模式（例如执行 npm run dev 时通常是 'development'，执行 npm run build 时通常是 'production'
++ `|| 'development'`：如果 import.meta.env.MODE 获取不到值，就会使用默认值 'development'
+
