@@ -71,6 +71,8 @@ const fixedModules = import.meta.glob(['./modules/**/*.ts', '!./modules/**/homep
 + `import.meta.glob`：这是 Vite 提供的专属 API。它的作用是在编译阶段自动扫描文件夹，把匹配到的文件路径和对应的模块内容，打包成一个对象。
 在执行完后会给 `homepageModules` 赋到以下内容
 ```ts
-{ './modules/user/homepage.ts': { default: [/* 路由配置 */] }, './modules/system/homepage.ts': { default: [/* 路由配置 */] } 
+{
+	'./modules/user/homepage.ts': { default: [/* 路由配置 */],
+	'./modules/system/homepage.ts': { default: [/* 路由配置 */]
 }
 ```
