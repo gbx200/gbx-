@@ -8,3 +8,5 @@
 ## 核心目录结构
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260717185457141.jpg)
 
+## src下的各个文件
+#### main.ts
