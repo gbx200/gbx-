@@ -144,14 +144,14 @@ const router = createRouter({  // 创建路由实例
   routes: allRoutes,  // 注入路由表
   scrollBehavior() {
     return {
-      el: '#app',
-      top: 0,
+      el: '#app', // 指定滚动的目标元素。这里表示相对于 id="app" 的 DOM 元素进行滚动定位
+      top: 0, // 在目标元素的基础上，垂直方向偏移 0 像素。结合起来就是：每次切换新页面，都滚动到 #app 容器的最顶部
       behavior: 'smooth',
     };
   },
 });
 ```
 这段代码实现路由最终的组装和启动
-+ 这其中的 `scrollBehavior` 是用来配置滚动行为的，
++ 这其中的 `scrollBehavior` 是用来配置滚动行为的，这是 Vue Router 提供的一个钩子函数，用来控制路由切换时页面的滚动位置。如果不配置，切换页面时滚动条可能会停留在上一个页面的位置，体验很差
 #### /modules
 ##### homepage.ts
