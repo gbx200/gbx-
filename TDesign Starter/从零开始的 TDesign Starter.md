@@ -119,3 +119,22 @@ export function mapModuleRouterList(modules: Record<string, unknown>): Array<Rou
 + 前两行的作用是调用转换函数并导出；将前面收集到的 `homepageModules` 和 `fixedModules` 对象，传入 `mapModuleRouterList` 函数进行清洗，转换成标准的路由数组。 并用 `export` 将其导出
 + 然后合并所有路由并赋给 `allRoutes`
 + 接下来定义一个函数 `mapModuleRouterList` 将固定路由模块转换为路由
+
+接下来下面有一块代码被定义为 `@deprecated 未使用` 是用来处理侧边栏菜单默认展开状态的，在当前版本的菜单在router/modules/homepage.ts中有新的写法，在后续会说这里略过这段废弃的代码
+
+```ts
+export const getActive = (maxLevel = 3): string => {
+  // 非组件内调用必须通过Router实例获取当前路由
+  const route = router.currentRoute.value;
+  
+  if (!route.path) {
+    return '';
+  }
+  
+  return route.path
+    .split('/')
+    .filter((_item: string, index: number) => index <= maxLevel && index > 0)
+    .map((item: string) => `/${item}`)
+    .join('');
+};
+```
