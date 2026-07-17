@@ -138,3 +138,7 @@ export const getActive = (maxLevel = 3): string => {
     .join('');
 };
 ```
+这个 `getActive` 函数是 TDesign Starter 中用来解决侧边栏菜单高亮联动的核心工具，有了它，在我们访问深层页面时侧边可以保持高亮
+
+#### /modules
+##### homepage.ts
