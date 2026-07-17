@@ -67,3 +67,4 @@ const homepageModules = import.meta.glob('./modules/**/homepage.ts', { eager: tr
 // 导入modules非homepage相关固定路由
 const fixedModules = import.meta.glob(['./modules/**/*.ts', '!./modules/**/homepage.ts'], { eager: true });
 ```
++ 最里边的eager:true表示同步加载，
