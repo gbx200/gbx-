@@ -6,4 +6,5 @@
 	+ 运行项目: `npm run dev`
 
 ## 核心目录结构
-![500](assets/从零开始的%20TDesign%20Starter/file-20260717185104948.png)
+![500](assets/从零开始的%20TDesign%20Starter/file-20260717185457141.jpg)
+
