@@ -118,4 +118,4 @@ export function mapModuleRouterList(modules: Record<string, unknown>): Array<Rou
 前面用`import.meta.glob`收集到的是一个对象，这里代码是用来转化为Vue Router需要的数组，并将数据合并
 + 前两行的作用是调用转换函数并导出；将前面收集到的 `homepageModules` 和 `fixedModules` 对象，传入 `mapModuleRouterList` 函数进行清洗，转换成标准的路由数组。 并用 `export` 将其导出
 + 然后合并所有路由并赋给 `allRoutes`
-+ 接下来定义一个函数 `mapModuleRouterList` 
++ 接下来定义一个函数 `mapModuleRouterList` 将固定路由模块转换为路由
