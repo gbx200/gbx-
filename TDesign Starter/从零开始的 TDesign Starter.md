@@ -126,11 +126,9 @@ export function mapModuleRouterList(modules: Record<string, unknown>): Array<Rou
 export const getActive = (maxLevel = 3): string => {
   // 非组件内调用必须通过Router实例获取当前路由
   const route = router.currentRoute.value;
-  
   if (!route.path) {
     return '';
   }
-  
   return route.path
     .split('/')
     .filter((_item: string, index: number) => index <= maxLevel && index > 0)
@@ -139,6 +137,7 @@ export const getActive = (maxLevel = 3): string => {
 };
 ```
 这个 `getActive` 函数是 TDesign Starter 中用来解决侧边栏菜单高亮联动的核心工具，有了它，在我们访问深层页面时侧边可以保持高亮
+
 
 #### /modules
 ##### homepage.ts
