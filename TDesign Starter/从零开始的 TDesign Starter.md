@@ -139,9 +139,9 @@ export const getActive = (maxLevel = 3): string => {
 这个 `getActive` 函数是 TDesign Starter 中用来解决侧边栏菜单高亮联动的核心工具，有了它，在我们访问深层页面时侧边可以保持高亮
 
 ```ts
-const router = createRouter({  //创建路由实例
-  history: createWebHistory(env === 'site' ? '/starter/vue-next/' : import.meta.env.VITE_BASE_URL),
-  routes: allRoutes,
+const router = createRouter({  // 创建路由实例
+  history: createWebHistory(env === 'site' ? '/starter/vue-next/' :import.meta.env.VITE_BASE_URL),  // 配置历史记录模式与基础路径
+  routes: allRoutes,  // 注入路由表
   scrollBehavior() {
     return {
       el: '#app',
@@ -152,5 +152,6 @@ const router = createRouter({  //创建路由实例
 });
 ```
 这段代码实现路由最终的组装和启动
++ 这其中的 `scrollBehavior` 是用来配置滚动行为的，
 #### /modules
 ##### homepage.ts
