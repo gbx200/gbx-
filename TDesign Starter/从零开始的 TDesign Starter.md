@@ -61,4 +61,9 @@ const env = import.meta.env.MODE || 'development';
 ```
 + `import.meta.env.MODE`：当前的运行模式（例如执行 npm run dev 时通常是 'development'，执行 npm run build 时通常是 'production'
 + `|| 'development'`：如果 import.meta.env.MODE 获取不到值，就会使用默认值 'development'
-
+```ts
+// 导入homepage相关固定路由
+const homepageModules = import.meta.glob('./modules/**/homepage.ts', { eager: true });
+// 导入modules非homepage相关固定路由
+const fixedModules = import.meta.glob(['./modules/**/*.ts', '!./modules/**/homepage.ts'], { eager: true });
+```
