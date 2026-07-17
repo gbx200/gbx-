@@ -1,1 +1,6 @@
 ## 初始化项目
+1. 安装脚手架 tdesign-starter-cli： `npm i tdesign-starter-cli -g`
+2. 创建项目 `td-starter init`
+3. 启动项目：
+	+ 安装依赖: `npm install`
+	+ 运行项目: `npm run dev`
