@@ -248,3 +248,4 @@ const router = createRouter({  // 创建路由实例
 ### src/store/
 这里写了关于Pinia 状态管理的内容
 #### index.ts
+
