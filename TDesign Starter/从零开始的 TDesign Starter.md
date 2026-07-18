@@ -165,3 +165,15 @@ const router = createRouter({  // 创建路由实例
 
 ### permission.ts
 
+这个文件写在用户切换页面时执行的逻辑
+1. 初始化与准备
+	```ts
+	NProgress.configure({ showSpinner: false }); // 关闭进度条的加载小圆圈
+	router.beforeEach(async (to, from, next) => {
+		NProgress.start(); // 每次路由跳转前，开启顶部进度条
+		const permissionStore = getPermissionStore();
+		const { whiteListRouters } = permissionStore; // 获取免登录白名单
+		const userStore = useUserStore();
+	```
+	作用：在每次页面跳转前，先启动进度条，并从 Pinia 状态管理中获取权限配置和用户信息。
+2. 
