@@ -248,4 +248,19 @@ const router = createRouter({  // 创建路由实例
 ### src/store/
 这里写了关于Pinia 状态管理的内容
 #### index.ts
+```ts
+const store = createPinia();
+store.use(createPersistedState());
+export { store };
+```
+这三行的作用是全局配置与持久化，引入一个 `pinia-plugin-persistedstate` 的插件使Store 中的数据自动保存到浏览器的 localStorage 或 sessionStorage 中，你侧边栏的折叠状态不会因你刷新而消失
+```ts
+export * from './modules/notification';
+export * from './modules/permission';
+export * from './modules/setting';
+export * from './modules/tabs-router';
+export * from './modules/user';
 
+export default store;
+```
+这是模块的统一导出，以后在vue组件使用时用 `import { useUserStore, usePermissionStore } from '@/store';` 就能直接使用所有模块
