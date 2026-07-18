@@ -264,3 +264,6 @@ export * from './modules/user';
 export default store;
 ```
 这是模块的统一导出，以后在vue组件使用时用 `import { useUserStore, usePermissionStore } from '@/store';` 就能直接使用所有模块
+
+#### modules/
+##### user.ts
