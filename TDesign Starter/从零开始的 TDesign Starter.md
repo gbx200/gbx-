@@ -165,7 +165,11 @@ const router = createRouter({  // 创建路由实例
 
 ### utils/
 ![200](assets/从零开始的%20TDesign%20Starter/file-20260718134345372.png)
-
+这个文件夹下封装了三块内容：
+1. 路由请求类 router/ 主要解决页面跳转和菜单显示
+	1. constant.ts ：常量定义
+		+ 这里写不需要从后端获取的路由配置：如404页、登录页、重定向页等无论用户是否有权限都可以看的
+	2. index.ts ：
 ### permission.ts
 
 这个文件写在用户切换页面时执行的逻辑
