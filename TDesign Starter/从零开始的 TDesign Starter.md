@@ -163,30 +163,7 @@ const router = createRouter({  // 创建路由实例
 
 此目录下其他文件都和这个类似
 
-### utils/
-![200](assets/从零开始的%20TDesign%20Starter/file-20260718134345372.png)
-这个文件夹下封装了三块内容：
-1. 路由请求类 router/ 主要解决页面跳转和菜单显示
-	1. constant.ts ：常量定义，这个页面的定义在下面index.ts都有引用
-		```ts
-		export const LAYOUT = () => import('@/layouts/index.vue');
-		export const BLANK_LAYOUT = () => import('@/layouts/blank.vue');
-		export const IFRAME = () => import('@/layouts/components/FrameBlank.vue');
-		export const EXCEPTION_COMPONENT = () => import('@/pages/result/500/index.vue');
-		export const PARENT_LAYOUT = () =>
-			new Promise((resolve) => {
-			    resolve({ name: 'ParentLayout' });
-			  });
-		export const PAGE_NOT_FOUND_ROUTE = {
-			  path: '/:w+',
-			  name: '404Page',
-			  redirect: '/result/404',
-			};
-		```
-		1. 使用了路由懒加载 `() => import(...)` ，只有用户访问对应页面时才下载这些文件，加快首页加载速度； 此前在router/modules下的文件都引用了`LAYOUT`
-		2. PARENT_LAYOUT： 空白布局，去除了侧边栏和顶部导航，只保留内容区
-		3. 
-	2. index.ts ：
+
 ### permission.ts
 
 这个文件写在用户切换页面时执行的逻辑
@@ -200,4 +177,4 @@ const router = createRouter({  // 创建路由实例
 		const userStore = useUserStore();
 	```
 	作用：在每次页面跳转前，先启动进度条，并从 Pinia 状态管理中获取权限配置和用户信息。
-2. 
+2. 已登录状态
