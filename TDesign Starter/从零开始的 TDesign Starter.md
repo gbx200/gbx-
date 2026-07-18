@@ -163,6 +163,7 @@ const router = createRouter({  // 创建路由实例
 
 此目录下其他文件都和这个类似
 
+
 ### permission.ts
 
 这个文件写在用户切换页面时执行的逻辑
