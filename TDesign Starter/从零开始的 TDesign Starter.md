@@ -155,7 +155,7 @@ const router = createRouter({  // 创建路由实例
 这段代码实现路由最终的组装和启动
 + 这其中的 `scrollBehavior` 是用来配置滚动行为的，这是 Vue Router 提供的一个钩子函数，用来控制路由切换时页面的滚动位置。如果不配置，切换页面时滚动条可能会停留在上一个页面的位置，体验很差
 #### /modules
-在这级目录下我们配置路由，可以加.ts文件，index.ts会自动挂载，以下看一下各个文件的特殊之处
+在这级目录下我们配置路由，可以加.ts文件，index.ts会自动挂载
 ##### homepage.ts
 在这个文件中，使用了 `LAYOUT` 作为了外层容器
 作用：在中后台系统中，/dashboard 这种业务页面通常都带有左侧菜单、顶部导航和底部版权信息。LAYOUT 就是那个包含这些公共元素的“大框架”。
@@ -183,7 +183,7 @@ const router = createRouter({  // 创建路由实例
 			  redirect: '/result/404',
 			};
 		```
-		1. 使用了路由懒加载 `() => import(...)` ，只有用户访问对应页面时才下载这些文件，加快首页加载速度
+		1. 使用了路由懒加载 `() => import(...)` ，只有用户访问对应页面时才下载这些文件，加快首页加载速度； 此前在router/modules下的文件都引用了`LAYOUT`
 		2. PARENT_LAYOUT： 
 	2. index.ts ：
 ### permission.ts
