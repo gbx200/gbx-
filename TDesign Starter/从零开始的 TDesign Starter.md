@@ -45,6 +45,7 @@ app.mount('#app');
 这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
 
 ##### index.ts
+这个文件的作用主要是把目录modules下的各个文件写的路由自动整合到一起
 ```ts
 import isObject from 'lodash/isObject';
 import uniq from 'lodash/uniq';
@@ -160,4 +161,5 @@ const router = createRouter({  // 创建路由实例
 作用：在中后台系统中，/dashboard 这种业务页面通常都带有左侧菜单、顶部导航和底部版权信息。LAYOUT 就是那个包含这些公共元素的“大框架”。
 机制：它把 LAYOUT 作为父级路由的 component，而把真正的页面（如 base/index.vue）放在 children 里。这样，当你在仪表盘的不同子页面切换时，侧边栏和顶部导航不会重新渲染，只有中间的内容区会变化。
 
-其他文件都和这个类似，不过多陈述
+此目录下其他文件都和这个类似
+
