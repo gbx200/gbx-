@@ -183,7 +183,7 @@ const router = createRouter({  // 创建路由实例
 			  redirect: '/result/404',
 			};
 		```
-		+ 
+		1. 
 	2. index.ts ：
 ### permission.ts
 
