@@ -186,7 +186,7 @@ const router = createRouter({  // 创建路由实例
     // 2.2 每次跳转都尝试获取用户信息（通常有缓存，不会重复请求）
 	    await userStore.getUserInfo(); 
 	    const { asyncRoutes } = permissionStore;
-    // 2.3 【破案关键】：如果动态路由表是空的，说明是首次登录或刷新页面
+    // 2.3 如果动态路由表是空的，说明是首次登录或刷新页面
 	    if (asyncRoutes && asyncRoutes.length === 0) {
       // 调用 Store 中的方法，构建动态路由（从后端拉取或本地生成）
 	      const routeList = await permissionStore.buildAsyncRoutes(); 
@@ -216,4 +216,31 @@ const router = createRouter({  // 创建路由实例
 	  }
 	}
 	```
-	
+3. 未登录状态的处理
+	```ts
+	else {
+	  // 3.1 如果目标路径在白名单中（如登录页、注册页），直接放行
+	  if (whiteListRouters.includes(to.path)) { next(); } 
+	  else {
+	    // 3.2 不在白名单中，强制跳转到登录页，并记录原本想去的路径
+	    next({ path: '/login', query: { redirect: encodeURIComponent(to.fullPath) } });
+	  }
+	  NProgress.done();
+	}
+	```
+4. 全局后置守卫（离开页面时）
+	```ts
+	router.afterEach((to) => {
+	  // 4.1 如果跳转到了登录页，说明用户退出了，清理状态
+	  if (to.path === '/login') {
+	    const userStore = useUserStore();
+	    const permissionStore = getPermissionStore();
+	    userStore.logout();
+	    permissionStore.restoreRoutes(); // 清空动态路由表
+	  }
+	  NProgress.done(); // 关闭顶部进度条
+	});
+	```
+### src/utils/request/Axios.ts
+
+网络请求的核心封装
