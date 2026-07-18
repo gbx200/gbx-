@@ -11,14 +11,14 @@
 - **作用**：全局路由守卫。
 - **重点看**：它是如何拦截请求、判断 Token、以及调用 `buildAsyncRoutes` 动态生成菜单的。这是解决“刷新页面404”和“权限控制”的关键。
 
-#### `src/utils/request/Axios.ts`
+#### `src/utils/request/Axios.ts`////
 
 - **作用**：网络请求的核心封装。
 - **重点看**：
     - `createAxios` 方法：看它如何配置 `baseURL` 和 `timeout`。
     - **拦截器**：看 `requestInterceptors` 怎么自动加 Token，`responseInterceptors` 怎么处理后端返回的统一格式（比如 `code: 200`）。
 
-#### `src/store/index.ts` 及 `modules/` 目录
+#### `src/store/index.ts` 及 `modules/` 目录////
 
 - **作用**：Pinia 状态管理。
 - **重点看**：TDesign Starter 通常把 Store 拆分为 `user`（用户信息）、`permission`（权限/菜单树）、`tabs-router`（顶部多标签页状态）。理解数据是如何在这些模块间流转的。
