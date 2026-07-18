@@ -244,3 +244,5 @@ const router = createRouter({  // 创建路由实例
 ### src/utils/request/Axios.ts
 
 网络请求的核心封装，在axios中我们一般封装请求拦截器和响应拦截器
+1. 核心拦截器机制
+	
