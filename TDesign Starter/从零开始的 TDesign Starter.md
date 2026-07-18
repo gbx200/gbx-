@@ -168,7 +168,22 @@ const router = createRouter({  // 创建路由实例
 这个文件夹下封装了三块内容：
 1. 路由请求类 router/ 主要解决页面跳转和菜单显示
 	1. constant.ts ：常量定义
-		+ 这里写不需要从后端获取的路由配置：如404页、登录页、重定向页等无论用户是否有权限都可以看的
+		```ts
+		export const LAYOUT = () => import('@/layouts/index.vue');
+		export const BLANK_LAYOUT = () => import('@/layouts/blank.vue');
+		export const IFRAME = () => import('@/layouts/components/FrameBlank.vue');
+		export const EXCEPTION_COMPONENT = () => import('@/pages/result/500/index.vue');
+		export const PARENT_LAYOUT = () =>
+			new Promise((resolve) => {
+			    resolve({ name: 'ParentLayout' });
+			  });
+		export const PAGE_NOT_FOUND_ROUTE = {
+			  path: '/:w+',
+			  name: '404Page',
+			  redirect: '/result/404',
+			};
+		```
+		+ 
 	2. index.ts ：
 ### permission.ts
 
