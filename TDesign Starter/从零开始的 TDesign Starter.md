@@ -241,7 +241,7 @@ const router = createRouter({  // 创建路由实例
 	  NProgress.done(); // 关闭顶部进度条
 	});
 	```
-### src/utils/request/Axios.ts
+### utils/request/Axios.ts
 
 在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
 
