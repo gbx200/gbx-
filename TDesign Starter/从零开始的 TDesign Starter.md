@@ -163,6 +163,8 @@ const router = createRouter({  // 创建路由实例
 
 此目录下其他文件都和这个类似
 
+### utils/
+![200](assets/从零开始的%20TDesign%20Starter/file-20260718134345372.png)
 
 ### permission.ts
 
