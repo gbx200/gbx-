@@ -183,7 +183,8 @@ const router = createRouter({  // 创建路由实例
 			  redirect: '/result/404',
 			};
 		```
-		1. 
+		1. 使用了路由懒加载 `() => import(...)` ，只有用户访问对应页面时才下载这些文件，加快首页加载速度
+		2. PARENT_LAYOUT： 
 	2. index.ts ：
 ### permission.ts
 
