@@ -167,7 +167,7 @@ const router = createRouter({  // 创建路由实例
 ![200](assets/从零开始的%20TDesign%20Starter/file-20260718134345372.png)
 这个文件夹下封装了三块内容：
 1. 路由请求类 router/ 主要解决页面跳转和菜单显示
-	1. constant.ts ：常量定义
+	1. constant.ts ：常量定义，这个页面的定义在下面index.ts都有引用
 		```ts
 		export const LAYOUT = () => import('@/layouts/index.vue');
 		export const BLANK_LAYOUT = () => import('@/layouts/blank.vue');
@@ -184,7 +184,8 @@ const router = createRouter({  // 创建路由实例
 			};
 		```
 		1. 使用了路由懒加载 `() => import(...)` ，只有用户访问对应页面时才下载这些文件，加快首页加载速度； 此前在router/modules下的文件都引用了`LAYOUT`
-		2. PARENT_LAYOUT： 
+		2. PARENT_LAYOUT： 空白布局，去除了侧边栏和顶部导航，只保留内容区
+		3. 
 	2. index.ts ：
 ### permission.ts
 
