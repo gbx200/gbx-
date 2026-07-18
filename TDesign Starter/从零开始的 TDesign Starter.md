@@ -177,4 +177,43 @@ const router = createRouter({  // 创建路由实例
 		const userStore = useUserStore();
 	```
 	作用：在每次页面跳转前，先启动进度条，并从 Pinia 状态管理中获取权限配置和用户信息。
-2. 已登录状态
+2. 已登录状态的处理
+	```ts
+	if (userStore.token) {
+  // 2.1 如果已登录，但访问的是登录页，直接放行（避免死循环）
+	  if (to.path === '/login') { next(); return; } 
+	  try {
+    // 2.2 每次跳转都尝试获取用户信息（通常有缓存，不会重复请求）
+	    await userStore.getUserInfo(); 
+	    const { asyncRoutes } = permissionStore;
+    // 2.3 【破案关键】：如果动态路由表是空的，说明是首次登录或刷新页面
+	    if (asyncRoutes && asyncRoutes.length === 0) {
+      // 调用 Store 中的方法，构建动态路由（从后端拉取或本地生成）
+	      const routeList = await permissionStore.buildAsyncRoutes(); 
+      // 核心：将生成的路由一条条动态添加到 Vue Router 中
+	      routeList.forEach((item: RouteRecordRaw) => {
+	        router.addRoute(item); 
+	      });
+      // 2.4 处理刷新页面的 404 问题
+	      if (to.name === PAGE_NOT_FOUND_ROUTE.name) {
+        // 如果当前匹配到了 404 页面，说明路由刚加进去，需要重新导航到目标路径
+	        next({ path: to.fullPath, replace: true, query: to.query });
+	      } else {
+        // 正常重定向逻辑
+	        const redirect = decodeURIComponent((from.query.redirect || to.path) as string);
+	        next(to.path === redirect ? { ...to, replace: true } : { path: redirect, query: to.query });
+	        return;
+      }
+    }
+    // 2.5 路由已存在，直接放行；不存在则踢回首页
+    if (router.hasRoute(to.name!)) { next(); } 
+    else { next(`/`); }
+    } catch (error) {
+    // 2.6 获取用户信息失败（如 Token 过期），报错并踢回登录页
+    MessagePlugin.error((error as Error).message);
+    next({ path: '/login', query: { redirect: encodeURIComponent(to.fullPath) } });
+    NProgress.done();
+	  }
+	}
+	```
+	
