@@ -244,3 +244,6 @@ const router = createRouter({  // 创建路由实例
 ### src/utils/request/Axios.ts
 
 在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
+
+### src/store/
+这里写了关于Pinia 状态管理的内容
