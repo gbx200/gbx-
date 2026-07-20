@@ -274,5 +274,5 @@ export default store;
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260720153605109.png)
 
 #### 2.修改src/utils/request/index.ts
-如果使用simplejwt
+如果使用jwt认证
 #### 创建API接口文件（src/api）
