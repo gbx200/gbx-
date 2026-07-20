@@ -279,3 +279,4 @@ export default store;
 #### 3.创建API接口文件（src/api）
 
 #### 4.修改src/store
+把这个文件下的mock数据改为真正的后端数据
