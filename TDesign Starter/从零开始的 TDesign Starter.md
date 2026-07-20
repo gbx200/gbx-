@@ -282,4 +282,5 @@ export default store;
 2. 在api/model下的文件负责限制传回数据的类型检验
 #### 4.修改src/store
 把这个文件下的mock数据改为真正的后端数据
-1. 修改/modules/下的user.ts
+1. 修改/modules/下的user.ts和permission.ts
+2. 修改router/下的index.ts
