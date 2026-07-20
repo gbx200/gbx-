@@ -284,3 +284,4 @@ export default store;
 把这个文件下的mock数据改为真正的后端数据
 1. 修改/modules/下的user.ts和permission.ts
 2. 修改router/下的index.ts
+#### 5.修改pages
