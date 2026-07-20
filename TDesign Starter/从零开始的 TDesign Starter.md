@@ -271,3 +271,5 @@ export default store;
 
 #### 配置Vite代理
 在vite.config.ts，关闭 Mock 并配置代理，让前端的 /api 请求能转发到你的 Django 后端：
+![500](assets/从零开始的%20TDesign%20Starter/file-20260720153605109.png)
+
