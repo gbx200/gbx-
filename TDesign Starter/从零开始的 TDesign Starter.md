@@ -277,3 +277,5 @@ export default store;
 如果使用jwt认证，请求时请求头需要使用Bearer <你的token>来验证身份
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260720155701137.png)
 #### 3.创建API接口文件（src/api）
+
+#### 4.修改src/store
