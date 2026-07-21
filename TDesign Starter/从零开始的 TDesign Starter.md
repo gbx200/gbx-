@@ -289,3 +289,4 @@ export default store;
 2. 修改router/下的index.ts
 ### 5.修改pages
 #### login
+在src下有permission.ts，
