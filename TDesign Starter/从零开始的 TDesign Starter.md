@@ -273,6 +273,8 @@ export default store;
 在vite.config.ts，关闭 Mock 并配置代理，让前端的 /api 请求能转发到你的 Django 后端：
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260720153605109.png)
 
++ 补充：在src文件夹下有名为.env.development的文件，在开发环境下，会优先使用 .env.development 里的 VITE_API_URL 作为基础地址，需要同时把这里的地址删掉
++ ![500](assets/从零开始的%20TDesign%20Starter/file-20260721151129110.png)
 #### 2.修改src/utils/request/index.ts
 如果使用jwt认证，请求时请求头需要使用Bearer <你的token>来验证身份
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260720155701137.png)
