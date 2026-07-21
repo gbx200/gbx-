@@ -337,3 +337,5 @@ router.afterEach((to) => {
 - 已登录时访问 `/login` 直接跳转到 `/dashboard/base`（你的首页），防止重复登录。
 - 未登录时，除了 `/login` 外全部拦截到登录页，并保留“重定向回原来页面”的功能（通过 `redirect` 参数）。
 - 移除了 `asyncRoutes` 判断和 `hasRoute` 检查，避免无限循环。
+
+#### 其他页面
