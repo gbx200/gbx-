@@ -278,7 +278,7 @@ export default store;
 #### 2.修改src/utils/request/index.ts
 + 如果使用jwt认证，请求时请求头需要使用Bearer <你的token>来验证身份![500](assets/从零开始的%20TDesign%20Starter/file-20260720155701137.png)
 + Axios 响应拦截期望后端返回的格式是 { code: 0, data: ... }，但DRF返回的直接是数据体（如 { results: [], count: 10 } 或 { id: 1 }），没有 code 字段。不修正的话所有请求都会报错。原始数据如下![500](assets/从零开始的%20TDesign%20Starter/file-20260721152548870.png)
-+ 修改：
++ 修改：![500](assets/从零开始的%20TDesign%20Starter/file-20260721153256821.png)
 #### 3.创建API接口文件（src/api）
 把原有的api清理掉，创建自己的api
 1. 在api/下负责接收后端传回的内容
