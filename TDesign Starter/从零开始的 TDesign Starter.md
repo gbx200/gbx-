@@ -339,4 +339,9 @@ router.afterEach((to) => {
 - 移除了 `asyncRoutes` 判断和 `hasRoute` 检查，避免无限循环。
 
 #### 其他页面
-新增页面
+##### 新增页面：
++ 如果想新增一个页面，不要子页面，直接在src/pages/下新增文件夹，文件夹里写index.vue即可；
++ 如果有子页面，在pages/下新增文件夹，在此文件夹下再创建文件夹，一个文件夹对应一个子文件
+**例**：
+![200](assets/从零开始的%20TDesign%20Starter/file-20260721193132130.png)
+![450](assets/从零开始的%20TDesign%20Starter/file-20260721193155401.png)
