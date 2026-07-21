@@ -343,5 +343,11 @@ router.afterEach((to) => {
 + 如果想新增一个页面，不要子页面，直接在src/pages/下新增文件夹，文件夹里写index.vue即可；
 + 如果有子页面，在pages/下新增文件夹，在此文件夹下再创建文件夹，一个文件夹对应一个子文件
 **例**：
+新建一个文件夹
 ![200](assets/从零开始的%20TDesign%20Starter/file-20260721193132130.png)
+写页面
 ![450](assets/从零开始的%20TDesign%20Starter/file-20260721193155401.png)
+这里我选择新建一个ts文件来存储新页面的路由，也可以选择写再其他路由后
+![](assets/从零开始的%20TDesign%20Starter/file-20260721193451774.png)
+实现效果：
+![](assets/从零开始的%20TDesign%20Starter/file-20260721193808433.png)
