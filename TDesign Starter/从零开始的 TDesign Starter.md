@@ -269,22 +269,23 @@ export default store;
 
 ## 修改页面
 
-#### 1.配置Vite代理
+### 1.配置Vite代理
 在vite.config.ts，关闭 Mock 并配置代理，让前端的 /api 请求能转发到你的 Django 后端：
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260720153605109.png)
 
 + 补充：在src文件夹下有名为.env.development的文件，在开发环境下，会优先使用 .env.development 里的 VITE_API_URL 作为基础地址，需要同时把这里的地址删掉
 + ![500](assets/从零开始的%20TDesign%20Starter/file-20260721151129110.png)
-#### 2.修改src/utils/request/index.ts
+### 2.修改src/utils/request/index.ts
 + 如果使用jwt认证，请求时请求头需要使用Bearer <你的token>来验证身份![500](assets/从零开始的%20TDesign%20Starter/file-20260720155701137.png)
 + Axios 响应拦截期望后端返回的格式是 { code: 0, data: ... }，但DRF返回的直接是数据体（如 { results: [], count: 10 } 或 { id: 1 }），没有 code 字段。不修正的话所有请求都会报错。原始数据如下![500](assets/从零开始的%20TDesign%20Starter/file-20260721152548870.png)
 + 修改：![500](assets/从零开始的%20TDesign%20Starter/file-20260721153256821.png)
-#### 3.创建API接口文件（src/api）
+### 3.创建API接口文件（src/api）
 把原有的api清理掉，创建自己的api
 1. 在api/下负责接收后端传回的内容
 2. 在api/model下的文件负责限制传回数据的类型检验
-#### 4.修改src/store
+### 4.修改src/store
 把这个文件下的mock数据改为真正的后端数据
 1. 修改/modules/下的user.ts和permission.ts
 2. 修改router/下的index.ts
-#### 5.修改pages
+### 5.修改pages
+#### login
