@@ -338,6 +338,9 @@ router.afterEach((to) => {
 - 未登录时，除了 `/login` 外全部拦截到登录页，并保留“重定向回原来页面”的功能（通过 `redirect` 参数）。
 - 移除了 `asyncRoutes` 判断和 `hasRoute` 检查，避免无限循环。
 
+#### user（个人中心页面）
+1. 删除constants，这是假数据，直接删除即可
+	![200](assets/从零开始的%20TDesign%20Starter/file-20260721195944191.png)
 #### 其他页面
 ##### 新增页面：
 + 如果想新增一个页面，不要子页面，直接在src/pages/下新增文件夹，文件夹里写index.vue即可；
