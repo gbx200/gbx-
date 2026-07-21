@@ -289,4 +289,51 @@ export default store;
 2. 修改router/下的index.ts
 ### 5.修改pages
 #### login
-在src下有permission.ts，
+在src下有permission.ts，它会检查token并自动跳转，但是复杂的跳转逻辑可能会导致报错，可以把它修改为
+```ts
+import 'nprogress/nprogress.css';
+import NProgress from 'nprogress';
+import router from '@/router';
+import { useUserStore } from '@/store';
+NProgress.configure({ showSpinner: false });
+const whiteListRouters = ['/login'];
+router.beforeEach(async (to, from, next) => {
+  NProgress.start();
+  const userStore = useUserStore();
+  if (userStore.token) {
+    if (to.path === '/login') {
+      // 已登录且访问登录页 -> 跳首页
+      next('/dashboard/base');
+      NProgress.done();
+      return;
+    }
+    // 已登录且访问其他页面 -> 放行
+    next();
+    NProgress.done();
+  } else {
+    // 未登录
+    if (whiteListRouters.includes(to.path)) {
+      // 白名单（如登录页）放行
+      next();
+    } else {
+      // 否则重定向到登录页，带上目标路径
+      next({
+        path: '/login',
+        query: { redirect: encodeURIComponent(to.fullPath) },
+      });
+    }
+    NProgress.done();
+  }
+});
+router.afterEach((to) => {
+  if (to.path === '/login') {
+    const userStore = useUserStore();
+    userStore.logout();
+  }
+  NProgress.done();
+});
+```
+- 完全去除了动态路由构建（`buildAsyncRoutes`）和复杂重定向，因为博客后台没有动态权限路由。
+- 已登录时访问 `/login` 直接跳转到 `/dashboard/base`（你的首页），防止重复登录。
+- 未登录时，除了 `/login` 外全部拦截到登录页，并保留“重定向回原来页面”的功能（通过 `redirect` 参数）。
+- 移除了 `asyncRoutes` 判断和 `hasRoute` 检查，避免无限循环。
