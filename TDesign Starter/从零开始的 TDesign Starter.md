@@ -354,3 +354,8 @@ router.afterEach((to) => {
 ![](assets/从零开始的%20TDesign%20Starter/file-20260721193451774.png)
 实现效果：
 ![](assets/从零开始的%20TDesign%20Starter/file-20260721193808433.png)
+
+## 遇到的问题
+### 点击退出登录会跳转到主页
+解决方法：在src/layout/components/Header下加上这两行代码
+![500](assets/从零开始的%20TDesign%20Starter/file-20260722144616526.png)
