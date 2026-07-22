@@ -372,3 +372,4 @@ const handleLogout = () => {
 	![500](assets/从零开始的%20TDesign%20Starter/file-20260722151943346.png)
 2. 修改src/permission.ts： 类似的路由全部修改
 	![400](assets/从零开始的%20TDesign%20Starter/file-20260722152135134.png)
+3. 修改src/layout/component下的SideNav.vue和Header.vue
