@@ -377,3 +377,5 @@ const handleLogout = () => {
 
 + **一键修改：** 按下 Ctrl + Shift + H；在上面的搜索框输入：/dashboard/base；在下面的替换框输入：/blog/list (你的首页)
 	![300](assets/从零开始的%20TDesign%20Starter/file-20260722152956489.png)
+	![300](assets/从零开始的%20TDesign%20Starter/file-20260722153256357.png)
+	
