@@ -378,4 +378,7 @@ const handleLogout = () => {
 + **一键修改：** 按下 Ctrl + Shift + H；在上面的搜索框输入：/dashboard/base；在下面的替换框输入：/blog/list (你的首页)
 	![300](assets/从零开始的%20TDesign%20Starter/file-20260722152956489.png)
 	![300](assets/从零开始的%20TDesign%20Starter/file-20260722153256357.png)
-	
+### 在侧边栏去除结果页
+如果想使用TDesign的结果页却不想让它出现在侧边栏：
+![400](assets/从零开始的%20TDesign%20Starter/file-20260722202033173.png)
+在箭头位置新增一行 `hidden: true,` 即可
