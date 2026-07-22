@@ -373,3 +373,7 @@ const handleLogout = () => {
 2. 修改src/permission.ts： 类似的路由全部修改
 	![400](assets/从零开始的%20TDesign%20Starter/file-20260722152135134.png)
 3. 修改src/layout/component下的SideNav.vue和Header.vue
+
+
++ **一键修改：** 按下 Ctrl + Shift + H；在上面的搜索框输入：/dashboard/base；在下面的替换框输入：/blog/list (你的首页)
+	![300](assets/从零开始的%20TDesign%20Starter/file-20260722152956489.png)
