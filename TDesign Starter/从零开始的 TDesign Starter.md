@@ -368,3 +368,7 @@ const handleLogout = () => {
 };
 ```
 ### 修改首页后无法准确定位
+1. 修改src/router/index.ts:修改重定向到自己写的首页
+	![500](assets/从零开始的%20TDesign%20Starter/file-20260722151943346.png)
+2. 修改src/permission.ts： 类似的路由全部修改
+	![400](assets/从零开始的%20TDesign%20Starter/file-20260722152135134.png)
