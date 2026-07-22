@@ -339,7 +339,7 @@ router.afterEach((to) => {
 - 移除了 `asyncRoutes` 判断和 `hasRoute` 检查，避免无限循环。
 
 #### user（个人中心页面）
-1. 删除constants，这是假数据，直接删除即可
+1. 删除constants，这是假数据，直接删除即可，若要修改其他页面同理
 	![200](assets/从零开始的%20TDesign%20Starter/file-20260721195944191.png)
 #### 其他页面
 ##### 新增页面：
