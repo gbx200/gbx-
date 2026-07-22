@@ -359,4 +359,11 @@ router.afterEach((to) => {
 ### 点击退出登录会跳转到主页
 解决方法：在src/layout/components/Header下加上这两行代码
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260722144616526.png)
-原因：原先是先定位到/login再清除token，修改之后是先清除token再跳转
+原因：原先是先定位到/login再清除token，修改之后是先清除token再跳转。这样修改后最终写法可以是这样：
+```ts
+const handleLogout = () => {
+  const userStore = useUserStore()
+  userStore.logout();
+  router.push('/login',);
+};
+```
