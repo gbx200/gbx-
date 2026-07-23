@@ -134,7 +134,10 @@ const getComponentsLocale = computed(() => {
 
 #### 使用：
 ##### 在.vie文件中的使用:
-在script中导入 `import { t } from '@/locales';` ,在你想写文本的地方直接使用{{ t('pages.dashboardBase.rankList.week') }}即可
+在script中导入 `import { t } from '@/locales';` ,在你想写文本的地方直接使用`{{ t('pages.dashboardBase.rankList.week') }}即可`
+##### 在js/ts文件中的使用：
+同样在顶部导入 `import { t } from '@/locales/index';` ，在下方使用时直接用 `t('pages.dashboardBase.chart.max')` 即可
+##### 
 
 
 
