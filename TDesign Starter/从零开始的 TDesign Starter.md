@@ -92,7 +92,49 @@ export const { t } = i18n.global; // 导出翻译函数 t
 export const languageList = computed(() => langList); // 导出语言列表，用于UI渲染
 export default i18n; // 导出 i18n 实例本身
 ```
-#### useLocale.ts
+##### useLocale.ts
+这个文件负责处理语言的切换、持久化存储，以及为 TDesign 组件库提供对应的语言包。
+1. 双向绑定语言状态:
+	+ 读取时 (get)：直接从 vue-i18n 的全局实例中获取当前语言。
+	+ 修改时 (set)：当你给 locale.value 赋值时，它会同步更新 vue-i18n 的内部状态。
+```ts
+const locale = computed({
+  get: () => i18n.global.locale.value,
+  set: (val: string) => {
+    i18n.global.locale.value = val;
+  },
+});
+```
+2. 持久化存储
+	`const storedLocale = useLocalStorage<SupportedLocale>(localeConfigKey, 'zh_CN');`
+	这里使用了 useLocalStorage。
+	+ 作用：它会在浏览器里记住用户上次选择的语言（比如 'en_US'）。
+	+ 默认值：如果用户第一次来，或者缓存被清了，默认回退到 'zh_CN'。
+	+ 在这个函数里，它定义了存储的能力，但在 changeLocale 中才被实际写入.
+3. 切换语言
+```ts
+const changeLocale = (lang: string) => {
+  // 1. 校验：防止传入非法语言代码
+  const validLang = supportedLocales.includes(lang as SupportedLocale) ? (lang as SupportedLocale) : 'zh_CN';
+  // 2. 更新 i18n 状态（页面文字会变）
+  locale.value = validLang;
+  // 3. 更新本地存储（刷新页面后语言不变）
+  storedLocale.value = validLang;
+  // 4. 业务联动：刷新通知消息
+  useNotificationStore().refreshMsgData();
+};
+```
+4. 适配 TDesign 组件库
+	用法：在 App.vue 或布局文件中，通常会把这个值传给  `<t-config-provider :global-config="getComponentsLocale">` ，从而实现组件库的自动翻译。
+```ts
+const getComponentsLocale = computed(() => {
+  return (i18n.global.getLocaleMessage(locale.value) as Record<string, any>).componentsLocale as GlobalConfigProvider;
+});
+```
+
+#### 使用
+
+
 
 ## src下的各个文件
 ### main.ts
