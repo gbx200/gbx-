@@ -21,9 +21,12 @@
 import en_US from 'tdesign-vue-next/es/locale/en_US';
 import zh_CN from 'tdesign-vue-next/es/locale/zh_CN';
 ```
-2. 定义支持的语言列表：
-
-
+2. 定义支持的语言列表：想要添加新语言只要在列表后加即可
+```ts
+export const supportedLocales = ['zh_CN', 'en_US'] as const;
+export type SupportedLocale = (typeof supportedLocales)[number];
+```
+3. 
 
 ## src下的各个文件
 ### main.ts
