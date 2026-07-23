@@ -12,7 +12,8 @@
 ### 国际化处理（中英文切换）
 在 TDesign Starter 模板中，国际化（i18n）的实现主要依赖 vue-i18n 库
 #### 在src/locales中配置了中英文切换相关的配置
-
+##### /lang
+在这个文件夹下分别写了en-US.json和zh-CN.json；在这两个文件下写了
 
 
 
