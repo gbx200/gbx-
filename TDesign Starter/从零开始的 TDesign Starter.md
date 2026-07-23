@@ -132,7 +132,8 @@ const getComponentsLocale = computed(() => {
 });
 ```
 
-#### 使用
+#### 使用：
+
 
 
 
