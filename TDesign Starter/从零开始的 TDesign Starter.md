@@ -42,6 +42,26 @@ export type SupportedLocale = (typeof supportedLocales)[number];
       },
 	```
 	这样在进行中英文切换时能正常显示，并且这样是必须写中英文，如果不写就会报错
+4. 自动收集翻译文件
+```ts
+// 使用 Vite 的 import.meta.glob 功能，自动导入 ./lang/ 目录下所有的 .json 文件
+const langModules = import.meta.glob('./lang/*.json', { eager: true });
+const messages: I18nOptions['messages'] = {};
+const langList: DropdownOption[] = [];
+// 遍历所有找到的语言文件
+Object.entries(langModules).forEach(([path, module]) => {
+  // 1. 从文件路径中提取语言代码，例如从 './lang/zh_CN.json' 中提取出 'zh_CN'
+  const code = path.match(/\.\/lang\/([^.]+)\.json$/)?.[1] as SupportedLocale | undefined;
+  if (!code || !supportedLocales.includes(code)) return;
+  // 2. 整合语言包：将业务代码的翻译(module.default)和组件库的翻译(tdesignLocaleMap[code])合并
+  messages[code] = { 
+    ...module.default, 
+    componentsLocale: tdesignLocaleMap[code] 
+  };
+  // 3. 生成一个用于 UI 显示的语言列表，比如 [{ content: '简体中文', value: 'zh_CN' }, ...]
+  langList.push({ content: module.default.lang as string, value: code });
+});
+```
 
 ## src下的各个文件
 ### main.ts
