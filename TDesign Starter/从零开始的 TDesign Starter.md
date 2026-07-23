@@ -59,6 +59,40 @@ Object.entries(langModules).forEach(([path, module]) => {
   langList.push({ content: module.default.lang as string, value: code });
 });
 ```
+5. 智能判断显示的语言：
+```ts
+// 获取初始语言的函数
+const getInitialLocale = (): SupportedLocale => {
+  // 1. 优先：查看本地存储，用户上次选了啥？
+  const stored = localStorage.getItem(localeConfigKey);
+  if (stored && supportedLocales.includes(stored as SupportedLocale)) {
+    return stored as SupportedLocale;
+  }
+  // 2. 其次：查看浏览器设置，用户偏好是啥？
+  const preferred = navigator.languages?.[0]?.replace(/-/g, '_');
+  if (preferred && supportedLocales.includes(preferred as SupportedLocale)) {
+    return preferred as SupportedLocale;
+  } 
+  // 3. 最后：都没找到，就默认用中文
+  return 'zh_CN';
+};
+const initialLocale = getInitialLocale();
+```
+6. 创建并导出 i18n 实例：
+```ts
+export const i18n = createI18n({
+  legacy: false,           // 使用 Vue 3 的组合式 API 模式
+  locale: initialLocale,   // 使用我们刚才智能判断出的初始语言
+  fallbackLocale: 'zh_CN', // 如果某个翻译找不到，就回退到中文
+  messages,                // 传入我们整合好的所有语言包
+  globalInjection: true,   // 允许在模板中直接使用 $t 函数
+});
+// 导出一些常用的工具，方便在其他地方使用
+export const { t } = i18n.global; // 导出翻译函数 t
+export const languageList = computed(() => langList); // 导出语言列表，用于UI渲染
+export default i18n; // 导出 i18n 实例本身
+```
+#### useLocale.ts
 
 ## src下的各个文件
 ### main.ts
