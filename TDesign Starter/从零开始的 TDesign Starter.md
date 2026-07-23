@@ -133,7 +133,8 @@ const getComponentsLocale = computed(() => {
 ```
 
 #### 使用：
-
+##### 在.vie文件中的使用:
+在script中导入 `import { t } from '@/locales';` ,在你想写文本的地方直接使用{{ t('pages.dashboardBase.rankList.week') }}即可
 
 
 
