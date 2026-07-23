@@ -42,7 +42,7 @@ export type SupportedLocale = (typeof supportedLocales)[number];
       },
 	```
 	这样在进行中英文切换时能正常显示，并且这样是必须写中英文，如果不写就会报错
-4. 自动收集翻译文件
+4. 自动收集翻译文件，提取代码并合并
 ```ts
 // 使用 Vite 的 import.meta.glob 功能，自动导入 ./lang/ 目录下所有的 .json 文件
 const langModules = import.meta.glob('./lang/*.json', { eager: true });
