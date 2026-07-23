@@ -54,10 +54,7 @@ Object.entries(langModules).forEach(([path, module]) => {
   const code = path.match(/\.\/lang\/([^.]+)\.json$/)?.[1] as SupportedLocale | undefined;
   if (!code || !supportedLocales.includes(code)) return;
   // 2. 整合语言包：将业务代码的翻译(module.default)和组件库的翻译(tdesignLocaleMap[code])合并
-  messages[code] = { 
-    ...module.default, 
-    componentsLocale: tdesignLocaleMap[code] 
-  };
+  messages[code] = { ...module.default, componentsLocale: tdesignLocaleMap[code] };
   // 3. 生成一个用于 UI 显示的语言列表，比如 [{ content: '简体中文', value: 'zh_CN' }, ...]
   langList.push({ content: module.default.lang as string, value: code });
 });
