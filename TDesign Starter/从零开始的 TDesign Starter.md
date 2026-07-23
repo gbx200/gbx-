@@ -25,7 +25,23 @@ import zh_CN from 'tdesign-vue-next/es/locale/zh_CN';
 export const supportedLocales = ['zh_CN', 'en_US'] as const;
 export type SupportedLocale = (typeof supportedLocales)[number];
 ```
-3. 
+3. 多语言标题类型，用于路由 meta.title 等场景
+	```ts
+	export type LocalizedTitle = Record<SupportedLocale, string>;
+	```
+	这行定义相当于
+	```ts
+	type LocalizedTitle = { zh_CN: string; en_US: string; }
+	```
+	这样写把那些需要支持多语言的数据加了约束；比如在router/modules/homepage中这样定义：
+	```ts
+	  meta: {
+      title: {
+        zh_CN: '仪表盘',
+        en_US: 'Dashboard',
+      },
+	```
+	这样在进行中英文切换时能正常显示，并且这样是必须写中英文，如果不写就会报错
 
 ## src下的各个文件
 ### main.ts
