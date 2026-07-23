@@ -16,7 +16,12 @@
 在这个文件夹下分别写了en-US.json和zh-CN.json；在这两个文件下分别写了中文和英文的json数据，以后在.vue文件中引用的时候可以使用类似 `{{ $t('layout.header.help') }}`的方式引入
 
 ##### index.ts
-
+1. 导入 TDesign 组件库自带的语言包：
+```ts
+import en_US from 'tdesign-vue-next/es/locale/en_US';
+import zh_CN from 'tdesign-vue-next/es/locale/zh_CN';
+```
+2. 定义支持的语言列表：
 
 
 
