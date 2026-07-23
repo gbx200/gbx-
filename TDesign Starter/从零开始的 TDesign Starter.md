@@ -138,7 +138,7 @@ const getComponentsLocale = computed(() => {
 ##### 在js/ts文件中的使用：
 同样在顶部导入 `import { t } from '@/locales/index';` ，在下方使用时直接用 `t('pages.dashboardBase.chart.max')` 即可
 ##### 做切换语言按钮：
-具体在项目/layouts/components/LayoutContent.vue中
+具体在项目src/components/LanguageSwitcher.vue中
 1. 引入 `import { useLocale } from '@/locales/useLocale';` 
 2. `const { locale } = useLocale();`
 3. 
