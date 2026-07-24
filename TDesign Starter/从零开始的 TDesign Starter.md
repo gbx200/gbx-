@@ -195,9 +195,9 @@ export default [
       data: {
         ...Mock.mock({
           'list|1-100': [{   // mockjs 语法，随机生成一个长度在 1 到 100 之间的数组
-              'index|+1': 1,    // 生成一个从 1 开始，每次自动递增 1 的数字**
-              'status|1': '@natural(0, 4)',  //
-              no: 'BH00@natural(01, 100)',
+              'index|+1': 1,    // 生成一个从 1 开始，每次自动递增 1 的数字
+              'status|1': '@natural(0, 4)',  // 从 0 到 4 这 5 个自然数中，随机挑选 1 个数字作为 status 的值
+              no: 'BH00@natural(01, 100)',   //生成一个以 BH00 为固定前缀，后面拼接一个 1 到 100 之间随机自然数的字符串。
               name: '@city()办公用品采购项目',
               'paymentType|1': '@natural(0, 1)',
               'contractType|1': '@natural(0, 2)',
