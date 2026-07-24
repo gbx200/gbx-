@@ -166,6 +166,9 @@ const changeLang = (lang: string) => {
 
 
 ### 用mock模拟后端请求
+#### 配置mock文件
+在主文件夹下有/mock/index.ts，我们在这个文件下可以看到脚手架配置的模拟后端接口和数据；
+
 
 ## src下的各个文件
 ### main.ts
