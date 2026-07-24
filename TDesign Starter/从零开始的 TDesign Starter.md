@@ -167,8 +167,51 @@ const changeLang = (lang: string) => {
 
 ### 用mock模拟后端请求
 #### 配置mock文件
-在主文件夹下有/mock/index.ts，我们在这个文件下可以看到脚手架配置的模拟后端接口和数据；
++ 在主文件夹下有/mock/index.ts，我们在这个文件下可以看到脚手架配置的模拟后端接口和数据；
++ 根目录下的 `mock/index.ts` 通过 `export default` 导出一个数组，每个元素是一个对象，定义了一个模拟接口：
+```ts
+import Mock from 'mockjs';  //可以使用mockjs生成随机数据
+import type { MockMethod } from 'vite-plugin-mock';
+export default [
+  {
+    url: '/api/get-purchase-list',
+    method: 'get',
+    response: () => ({
+      code: 0,
+      data: Mock.mock({ ... }),
+    }),
+  },
+  // ...其他接口
+] as MockMethod[];
+```
 
++ 数据的写法：以其中一个数据举例
+```ts
+  {
+    url: '/api/get-list',
+    method: 'get',
+    response: () => ({
+      code: 0,
+      data: {
+        ...Mock.mock({
+          'list|1-100': [   // mockjs 语法，生成 10 条数据
+            {
+              'index|+1': 1,
+              'status|1': '@natural(0, 4)',
+              no: 'BH00@natural(01, 100)',
+              name: '@city()办公用品采购项目',
+              'paymentType|1': '@natural(0, 1)',
+              'contractType|1': '@natural(0, 2)',
+              updateTime: '2020-05-30 @date("HH:mm:ss")',
+              amount: '@natural(10, 500),000,000',
+              adminName: '@cname()',
+            },
+          ],
+        }),
+      },
+    }),
+  },
+```
 
 ## src下的各个文件
 ### main.ts
