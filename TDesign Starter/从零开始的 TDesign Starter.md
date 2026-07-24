@@ -194,10 +194,9 @@ export default [
       code: 0,
       data: {
         ...Mock.mock({
-          'list|1-100': [   // mockjs 语法，生成 10 条数据
-            {
-              'index|+1': 1,
-              'status|1': '@natural(0, 4)',
+          'list|1-100': [{   // mockjs 语法，随机生成一个长度在 1 到 100 之间的数组
+              'index|+1': 1,    // 生成一个从 1 开始，每次自动递增 1 的数字**
+              'status|1': '@natural(0, 4)',  //
               no: 'BH00@natural(01, 100)',
               name: '@city()办公用品采购项目',
               'paymentType|1': '@natural(0, 1)',
@@ -205,8 +204,7 @@ export default [
               updateTime: '2020-05-30 @date("HH:mm:ss")',
               amount: '@natural(10, 500),000,000',
               adminName: '@cname()',
-            },
-          ],
+            }],
         }),
       },
     }),
