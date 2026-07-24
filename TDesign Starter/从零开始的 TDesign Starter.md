@@ -219,11 +219,12 @@ import { viteMockServe } from 'vite-plugin-mock';
       vueJsx(),
       viteMockServe({
         mockPath: 'mock',
-        enable: true,    // <--zao
+        enable: true,    // <--在这里启用mock
       }),
       svgLoader(),
     ],
 ```
+#### 在.vue文件下使用
 ## src下的各个文件
 ### main.ts
 ```ts
