@@ -226,7 +226,11 @@ import { viteMockServe } from 'vite-plugin-mock';
 ```
 #### 在.vue文件下使用
 例：src/pages/list/base/index.vue
-
+1. index.vue 在 onMounted 时调用 fetchData()
+2. fetchData 调用 getList()（来自 @/api/list）
+3. getList 内部发起 HTTP 请求（例如 GET /api/get-list）
+4. 如果 mock 启用且代理没冲突，该请求被 mock/index.ts 中定义的 /api/get-list 拦截
+5. 返回 mock 数据，组件将数据渲染到表格中
 ## src下的各个文件
 ### main.ts
 ```ts
