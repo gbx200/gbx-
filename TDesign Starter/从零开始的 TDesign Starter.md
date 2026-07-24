@@ -201,9 +201,9 @@ export default [
               name: '@city()办公用品采购项目',
               'paymentType|1': '@natural(0, 1)',
               'contractType|1': '@natural(0, 2)',
-              updateTime: '2020-05-30 @date("HH:mm:ss")',
+              updateTime: '2020-05-30 @date("HH:mm:ss")',  // 生成一个日期固定为 2020-05-30，但时间部分（时:分:秒）是随机生成的字符串。
               amount: '@natural(10, 500),000,000',
-              adminName: '@cname()',
+              adminName: '@cname()',   // 生成一个随机的中文姓名作为管理员的名字。
             }],
         }),
       },
