@@ -9,7 +9,7 @@
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260717185457141.jpg)
 
 ## 核心知识体系分模块
-### 国际化处理（中英文切换）
+### 国际化处理（语言切换）
 在 TDesign Starter 模板中，国际化（i18n）的实现主要依赖 vue-i18n 库
 #### 在src/locales中配置了中英文切换相关的配置
 ##### /lang
