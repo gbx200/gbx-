@@ -146,9 +146,26 @@ const changeLang = (lang: string) => {
   changeLocale(lang); // 调用封装好的 Hook 进行切换
 };
 ```
+切换菜单自动识别语言并渲染：
+```ts
+  <t-dropdown trigger="click">
+    <t-button theme="default" shape="square" variant="text">
+      <translate-icon />
+    </t-button>
+    <t-dropdown-menu>
+      <t-dropdown-item
+        v-for="(lang, index) in languageList"
+        :key="index"
+        :value="lang.value"
+        @click="(options) => changeLang(options.value as string)"
+        >{{ lang.content }}</t-dropdown-item
+      ></t-dropdown-menu
+    >
+  </t-dropdown>
+```
 
 
-
+### mock
 ## src下的各个文件
 ### main.ts
 ```ts
