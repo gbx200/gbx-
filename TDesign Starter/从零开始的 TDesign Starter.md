@@ -225,6 +225,8 @@ import { viteMockServe } from 'vite-plugin-mock';
     ],
 ```
 #### 在.vue文件下使用
+例：src/pages/list/base/index.vue
+
 ## src下的各个文件
 ### main.ts
 ```ts
