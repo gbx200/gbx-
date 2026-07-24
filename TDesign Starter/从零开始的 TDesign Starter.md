@@ -139,9 +139,13 @@ const getComponentsLocale = computed(() => {
 同样在顶部导入 `import { t } from '@/locales/index';` ，在下方使用时直接用 `t('pages.dashboardBase.chart.max')` 即可
 ##### 做切换语言按钮：
 具体在项目src/components/LanguageSwitcher.vue中
-1. 引入 `import { useLocale } from '@/locales/useLocale';` 
-2. `const { locale } = useLocale();`
-3. 
+```ts
+import { useLocale } from '@/locales/useLocale';
+const { changeLocale } = useLocale();
+const changeLang = (lang: string) => {
+  changeLocale(lang); // 调用封装好的 Hook 进行切换
+};
+```
 
 
 
