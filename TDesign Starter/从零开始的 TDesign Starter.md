@@ -210,7 +210,10 @@ export default [
     }),
   },
 ```
-#### 
+#### 在vite.config.ts中启用：
+```ts
+
+```
 ## src下的各个文件
 ### main.ts
 ```ts
