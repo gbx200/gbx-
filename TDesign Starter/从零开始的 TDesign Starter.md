@@ -212,7 +212,17 @@ export default [
 ```
 #### 在vite.config.ts中启用：
 ```ts
+import { viteMockServe } from 'vite-plugin-mock';
 
+    plugins: [
+      vue(),
+      vueJsx(),
+      viteMockServe({
+        mockPath: 'mock',
+        enable: true,    // <--zao
+      }),
+      svgLoader(),
+    ],
 ```
 ## src下的各个文件
 ### main.ts
