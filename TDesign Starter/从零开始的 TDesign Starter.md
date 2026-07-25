@@ -232,7 +232,7 @@ import { viteMockServe } from 'vite-plugin-mock';
 4. 如果 mock 启用且代理没冲突，该请求被 mock/index.ts 中定义的 /api/get-list 拦截
 5. 返回 mock 数据，组件将数据渲染到表格中
 + 在api/list中有如下写法来请求数据
-	![](assets/从零开始的%20TDesign%20Starter/file-20260725083936396.png)
+![500](assets/从零开始的%20TDesign%20Starter/file-20260725083936396.png)
 ### pinia状态管理
  在src/store/里写了关于Pinia 状态管理的内容，Pinia 是用来管理“全局数据”的工具，比如当在一个页面修改了用户昵称，其他页面也要同步显示新昵称，这时候就需要一个“全局的数据仓库”；pinia把数据放在“仓库（Store）”里，所有组件都能访问、修改，而且是响应式的
  结构：
@@ -327,7 +327,7 @@ const data = await request.get({ url: '/api/users' });
 5. 你在页面里拿到的 data 就是处理过的纯净数据，可以直接用。
 6. 如果请求失败（网络错误、超时等），会触发 responseInterceptorsCatch，里面实现了自动重试（默认最多重试 3 次）。
 ### 路由（router）
-### router/
+#### router/
 在这个文件夹下的，是我们的路由配置
 ![200](assets/从零开始的%20TDesign%20Starter/file-20260717191738796.png)
 这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
