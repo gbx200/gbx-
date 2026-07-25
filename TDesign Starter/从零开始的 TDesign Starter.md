@@ -264,7 +264,30 @@ export * from './modules/tabs-router';
 export * from './modules/user';
 export default store;
 ```
-定义在main.ts中被引用·
+#### /modules/user.ts
+以此文件举例，其他文件大同小异
+每个仓库用 defineStore 定义，包含三部分：
++ state：仓库中的数据（相当于组件的 data）
++ getters：对 state 进行计算或派生（相当于 computed）
++ actions：修改 state 的方法（相当于 methods）
+```ts
+export const useUserStore = defineStore('user', {   // 'user' 是仓库的唯一 ID
+  state: () => ({
+    token: 'main_token',
+    userInfo: { name: '', roles: [] },
+  }),
+  getters: {
+    roles: (state) => state.userInfo?.roles,
+  },
+  actions: {
+    async login(userInfo) { ... },
+    async getUserInfo() { ... },
+    async logout() { ... },
+  },
+  persist: { ... }   // 持久化配置
+});
+```
+#### 在vue组件中使用
 ## src下的各个文件
 ### main.ts
 ```ts
