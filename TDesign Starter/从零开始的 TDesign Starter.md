@@ -233,6 +233,8 @@ import { viteMockServe } from 'vite-plugin-mock';
 5. 返回 mock 数据，组件将数据渲染到表格中
 + 在api/list中有如下写法来请求数据
 	![](assets/从零开始的%20TDesign%20Starter/file-20260725083936396.png)
+### pinia状态管理
+
 ## src下的各个文件
 ### main.ts
 ```ts
