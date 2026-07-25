@@ -234,7 +234,37 @@ import { viteMockServe } from 'vite-plugin-mock';
 + 在api/list中有如下写法来请求数据
 	![](assets/从零开始的%20TDesign%20Starter/file-20260725083936396.png)
 ### pinia状态管理
+ 在src/store/里写了关于Pinia 状态管理的内容，Pinia 是用来管理“全局数据”的工具，比如当在一个页面修改了用户昵称，其他页面也要同步显示新昵称，这时候就需要一个“全局的数据仓库”；pinia把数据放在“仓库（Store）”里，所有组件都能访问、修改，而且是响应式的
+ 结构：
+ ```text
+ src/
+  store/
+    index.ts                # 创建 Pinia 实例，并导出所有仓库
+    modules/
+      notification.ts       # 通知消息仓库
+      permission.ts        # 权限/菜单路由仓库
+      setting.ts           # 主题、布局等设置仓库
+      tabs-router.ts       # 多标签页（Tab）管理仓库
+      user.ts              # 用户登录信息仓库
+ ```
+ 
+#### index.ts：
+```ts
+import { createPinia } from 'pinia';
+import { createPersistedState } from 'pinia-plugin-persistedstate';
 
+const store = createPinia();                          // 创建一个 Pinia 实例
+store.use(createPersistedState());                   // 安装持久化插件（让部分仓库数据自动保存到 localStorage）
+
+export { store };
+export * from './modules/notification';              // 导出所有仓库的定义
+export * from './modules/permission';
+export * from './modules/setting';
+export * from './modules/tabs-router';
+export * from './modules/user';
+export default store;
+```
+定义在main.ts中被引用·
 ## src下的各个文件
 ### main.ts
 ```ts
