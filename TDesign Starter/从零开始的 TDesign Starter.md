@@ -303,7 +303,11 @@ useSettingStore() 必须在组件的 setup 中调用，它返回一个响应式�
 
 ### Axios
 在utils/request/下写了关于aixos相关的内容；在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
-
++ `utils/request/index.ts`： 创建了最终的 request 实例，配置了拦截器、基础 URL、超时等。
++ `utils/request/Axios.ts`: 定义了一个 VAxios 类，封装了 axios 的 get、post、put、delete 等方法，并且加入了重试、防抖/节流等功能。
++ `utils/request/AxiosTransform.ts`  定义了“钩子函数”的类型，比如请求前、响应后要做什么（加 token、格式转换等）。
++ `utils/request/AxiosCancel.ts`:实现“取消重复请求”的功能（防止短时间内多次点击同一个按钮）。
++ `utils/request/utils.ts`一些辅助函数（比如给请求加时间戳、格式化日期）。
 ## src下的其他文件
 ### main.ts
 ```ts
