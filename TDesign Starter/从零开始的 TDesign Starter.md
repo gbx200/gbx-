@@ -301,7 +301,8 @@ settingStore.updateConfig({ mode: 'dark' });  // 调用 action 修改数据
 ```
 useSettingStore() 必须在组件的 setup 中调用，它返回一个响应式对象。所有使用这个仓库的组件都会共享同一份数据。
 
-### 
+### Axios
+在utils/request/下写了关于aixos相关的内容；在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
 
 ## src下的其他文件
 ### main.ts
@@ -536,29 +537,6 @@ const router = createRouter({  // 创建路由实例
 	  NProgress.done(); // 关闭顶部进度条
 	});
 	```
-### utils/request/Axios.ts
-
-在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
-
-#### index.ts
-```ts
-const store = createPinia();
-store.use(createPersistedState());
-export { store };
-```
-这三行的作用是全局配置与持久化，引入一个 `pinia-plugin-persistedstate` 的插件使Store 中的数据自动保存到浏览器的 localStorage 或 sessionStorage 中，你侧边栏的折叠状态不会因你刷新而消失
-```ts
-export * from './modules/notification';
-export * from './modules/permission';
-export * from './modules/setting';
-export * from './modules/tabs-router';
-export * from './modules/user';
-
-export default store;
-```
-这是模块的统一导出，以后在vue组件使用时用 `import { useUserStore, usePermissionStore } from '@/store';` 就能直接使用所有模块
-
-#### modules/
 
 ## 修改页面
 
