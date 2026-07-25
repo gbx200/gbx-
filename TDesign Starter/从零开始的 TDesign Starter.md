@@ -327,7 +327,12 @@ const data = await request.get({ url: '/api/users' });
 5. 你在页面里拿到的 data 就是处理过的纯净数据，可以直接用。
 6. 如果请求失败（网络错误、超时等），会触发 responseInterceptorsCatch，里面实现了自动重试（默认最多重试 3 次）。
 ### 路由（router）
+#### src/router/
 
+在这个文件夹下的，是我们的路由配置
+![200](assets/从零开始的%20TDesign%20Starter/file-20260717191738796.png)
+
+这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
 
 ## src下的其他文件
 ### main.ts
@@ -358,12 +363,7 @@ app.use(i18n);
 app.mount('#app');
 ```
 
-### router/
 
-在这个文件夹下的，是我们的路由配置
-![200](assets/从零开始的%20TDesign%20Starter/file-20260717191738796.png)
-
-这种将路由文件拆分到 modules 文件夹下的做法，是模块化路由设计。它的核心目的是为了解决随着项目变大，单个 router/index.ts 文件变得过于臃肿、难以维护的问题。
 
 ##### index.ts
 这个文件的作用主要是把目录modules下的各个文件写的路由自动整合到一起
