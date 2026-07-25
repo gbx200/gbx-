@@ -288,6 +288,21 @@ export const useUserStore = defineStore('user', {   // 'user' 是仓库的唯一
 });
 ```
 #### 在vue组件中使用
+在任一个组件中使用：
+```ts
+<script setup>
+import { useSettingStore } from '@/store';   // 从 store/index.ts 引入仓库
+
+const settingStore = useSettingStore();       // 创建仓库实例（一般在 script setup 中调用一次）
+console.log(settingStore.mode);               // 直接读取 state
+console.log(settingStore.displayMode);        // 读取 getter
+settingStore.updateConfig({ mode: 'dark' });  // 调用 action 修改数据
+</script>
+```
+useSettingStore() 必须在组件的 setup 中调用，它返回一个响应式对象。所有使用这个仓库的组件都会共享同一份数据。
+
+### 
+
 ## src下的各个文件
 ### main.ts
 ```ts
