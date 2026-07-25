@@ -303,7 +303,7 @@ useSettingStore() 必须在组件的 setup 中调用，它返回一个响应式�
 
 ### 
 
-## src下的各个文件
+## src下的其他文件
 ### main.ts
 ```ts
 /* eslint-disable simple-import-sort/imports */
@@ -540,8 +540,6 @@ const router = createRouter({  // 创建路由实例
 
 在axios中我们一般封装请求拦截器和响应拦截器等网络请求的核心封装，大部分情况下我们不需要改动这里的代码
 
-### src/store/
-这里写了关于Pinia 状态管理的内容
 #### index.ts
 ```ts
 const store = createPinia();
