@@ -231,6 +231,8 @@ import { viteMockServe } from 'vite-plugin-mock';
 3. getList 内部发起 HTTP 请求（例如 GET /api/get-list）
 4. 如果 mock 启用且代理没冲突，该请求被 mock/index.ts 中定义的 /api/get-list 拦截
 5. 返回 mock 数据，组件将数据渲染到表格中
++ 在api/list中有如下写法来请求数据
+	![](assets/从零开始的%20TDesign%20Starter/file-20260725083936396.png)
 ## src下的各个文件
 ### main.ts
 ```ts
