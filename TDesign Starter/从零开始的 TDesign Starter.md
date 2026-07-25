@@ -308,6 +308,27 @@ useSettingStore() 必须在组件的 setup 中调用，它返回一个响应式�
 + `utils/request/AxiosTransform.ts`  定义了“钩子函数”的类型，比如请求前、响应后要做什么（加 token、格式转换等）。
 + `utils/request/AxiosCancel.ts`:实现“取消重复请求”的功能（防止短时间内多次点击同一个按钮）。
 + `utils/request/utils.ts`一些辅助函数（比如给请求加时间戳、格式化日期）。
+#### 在.vue文件中：
+```ts
+import { request } from '@/utils/request';
+const data = await request.get({ url: '/api/users' });
+```
+这样写即可
+
+1. request.get() → 进入 VAxios.request() 方法。
+2. 在 request() 内部：
+	+ 调用 beforeRequestHook：把 /api/users 前面加上 VITE_API_URL_PREFIX（比如 /api），所以实际请求路径变成 /api/api/users。还要加上时间戳 _t 防止缓存。
+	+ 调用请求拦截器：从 userStore 取出 token，加到请求头的 Authorization 字段。
+	+ 发送真正的 HTTP 请求（this.instance.request）。
+3. 等待服务器返回。
+4. 收到响应后，调用 transformRequestHook：
+	+ 如果返回的 JSON 里 code === 0，就只返回 data 字段（比如 { list: [...] }）。
+	+ 如果 code !== 0，就抛出一个错误。
+5. 你在页面里拿到的 data 就是处理过的纯净数据，可以直接用。
+6. 如果请求失败（网络错误、超时等），会触发 responseInterceptorsCatch，里面实现了自动重试（默认最多重试 3 次）。
+### 路由（router）
+
+
 ## src下的其他文件
 ### main.ts
 ```ts
@@ -542,7 +563,7 @@ const router = createRouter({  // 创建路由实例
 	});
 	```
 
-## 修改页面
+## 修改页面（菜单增减等）
 
 ### 1.配置Vite代理
 在vite.config.ts，关闭 Mock 并配置代理，让前端的 /api 请求能转发到你的 Django 后端：
@@ -631,7 +652,7 @@ router.afterEach((to) => {
 ![](assets/从零开始的%20TDesign%20Starter/file-20260721193808433.png)
 
 ## 遇到的问题
-### 点击退出登录会跳转到主页
+### 点击退出登录会跳转到主页而不是登录页
 解决方法：在src/layout/components/Header下加上这两行代码
 ![500](assets/从零开始的%20TDesign%20Starter/file-20260722144616526.png)
 原因：原先是先定位到/login再清除token，修改之后是先清除token再跳转。这样修改后最终写法可以是这样：
@@ -657,3 +678,6 @@ const handleLogout = () => {
 如果想使用TDesign的结果页却不想让它出现在侧边栏：
 ![400](assets/从零开始的%20TDesign%20Starter/file-20260722202033173.png)
 在箭头位置新增一行 `hidden: true,` 即可
+### 报错时会返回四次错误信息
+在axios中封装有responseInterceptorsCatch：
+如果请求失败（网络错误、超时等），会触发 responseInterceptorsCatch，里面实现了自动重试（默认最多重试 3 次）。
